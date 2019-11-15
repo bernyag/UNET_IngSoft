@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style-ofreceHogar.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="Grid.css">
+        <link rel="stylesheet" type="text/css" href="responsive.css">
+        
+        <title>myhaus - Ofrecer Hogar</title>
+        <link rel="icon" type="image/ico" href="img/logo-negro.png"/>
+        
+    </head>
+    
+    <body>
+        <nav class="sticky">
+                <div class="row">
+                    <a href="../index.html"><img src="img/logo-blanco.png" alt="Logo myHaus" class="logo-nav"></a>
+                    <ul class="main-nav js--main-nav">
+
+                        <li><a href="rentarCasa.html">Buscar Hogar</a></li>
+                        <li><a href="ofreceHogar.html">Ofrecer Hogar</a></li>
+                        <li><a href="vistaPropiedades.html">Mis Hogares</a></li>
+                        <li><a href="miCuenta.html"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi cuenta</a></li>
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
+                </div>
+        </nav>
+        
+        <!-- Intro section-->
+        
+        <section class="intro">
+            <div>
+                <h1>¡Renta tu casa <br> ahora en myhaus!</h1>
+            </div>
+        </section>
+        
+        
+        <section class="intros">
+            <div>
+                <a class="btn btn-full js--scroll-to-contact" id="btn-contacto" href="#">Subir Datos</a>
+            </div>
+        </section>
+        
+        <!-- Ends intro section-->
+        
+        
+        <!-- Descripcion section-->
+        
+        
+        <section class="descripcion">
+            <h2>Datos Generales</h2>
+            <div class="row">
+                
+                <form method="post" action="#" class="contact-form">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Nombre de la Casa/Título</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre o título a mostrar" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Descripción Breve</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <textarea name="message" placeholder="Esta descripción aparecerá debajo de tu anuncio cuando los usuarios busquen hogares, debe ser muy breve y dar una primera idea del hogar que ofreces."></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Descripción General</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <textarea name="message" placeholder="Esta descripción aparecerá en la página de tu casa, deberá ser lo más detallada posible para permitirle a los usuarios saber que estas ofreciendo."></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Precio mensual</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <ion-icon class="icon-small" name="logo-usd" ></ion-icon>
+                                <br><input type="range" min="2000" max="50000" value="20000" step="250" class="slider" id="myRange"><p>$<span id="demo"></span></p>
+                                <script>
+                                    var slider = document.getElementById("myRange");
+                                    var output = document.getElementById("demo");
+                                    output.innerHTML = slider.value;
+
+                                    slider.oninput = function() {
+                                      output.innerHTML = this.value;
+                                    }
+                                </script>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </section>
+        
+        <!-- Ends descripcion section-->
+        
+        <!-- filyser section-->
+        
+        <section class="filyser">
+            <div class="row">
+                <div class="col span-1-of-3 filtros-box">
+                <h2>Características</h2>
+                    <ul class="filtros">
+                            <li><ion-icon name="business" class="icon-small"></ion-icon><h4>Tipo de vivienda:</h4> 
+                                <br><input type="radio" name="tipo" value="casa" class="radio">Casa
+                                <br><input type="radio" name="tipo" value="cuarto" class="radio">Cuarto
+                                <br><input type="radio" name="tipo" value="depto" class="radio">Departamento
+                            </li>
+                            <li><ion-icon name="bed" class="icon-small"></ion-icon><h4>Camas:</h4>  
+                                <br><input type="radio" name="camas" value="1" class="radio">1
+                                <br><input type="radio" name="camas" value="2" class="radio">2
+                                <br><input type="radio" name="camas" value="3" class="radio">3 o más
+                            </li>
+                            <li><ion-icon name="key" class="icon-small"></ion-icon><h4>Cuartos:</h4>
+                                <br><input type="radio" name="cuartos" value="1" class="radio">1
+                                <br><input type="radio" name="cuartos" value="2" class="radio">2
+                                <br><input type="radio" name="cuartos" value="3" class="radio">3 o más
+                            </li>
+                            <li><ion-icon name="body" class="icon-small"></ion-icon><h4>Baños:</h4> 
+                                <br><input type="radio" name="banos" value="1" class="radio">1
+                                <br><input type="radio" name="banos" value="2" class="radio">2 o más
+                            </li>
+                        </ul>
+                </div>
+                <div class="col span-1-of-3 filtros-box">
+                    <h2>Servicios</h2>
+                    <ul class="filtros">
+                        <li><ion-icon name="ribbon" class="icon-small"></ion-icon><h4>Cuentas con:</h4>
+                                <ul class="servicios">
+                                    <li><input type="checkbox" name="serv" class="radio">Wifi</li>
+                                    <li><input type="checkbox" name="serv" class="radio">TV</li>
+                                    <li><input type="checkbox" name="serv" class="radio">Lavandería</li> 
+                                    <li><input type="checkbox" name="serv" class="radio">Estacionamiento</li>  
+                                    <li><input type="checkbox" name="serv" class="radio">Ama de llaves</li> 
+                                    <li><input type="checkbox" name="serv" class="radio">Seguridad</li>
+                                    <li><input type="checkbox" name="serv" class="radio">Cocina</li>
+                                </ul> 
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ends descripcion section-->
+        
+        <!-- fotos section-->
+        
+        <section class="fotos">
+            <div class="row">
+                <h2>Fotos</h2>
+                <div class="form">
+                    <form method="post" enctype="multipart/form-data" target="_blank">
+                    <p class="par">Selecciona las fotos que deseas subir:</p> <br>
+                    <input type="file" name="myFile[]" multiple onchange="readURL(this);"> <br><br>
+                        <input type="submit" value="Subir fotos"> <br><br>
+                        <img class="upload-photo" id="foto1" src="http://placehold.it/180" alt="foto" />
+                        <img class="upload-photo" id="foto2" src="http://placehold.it/180" alt="foto" />
+                        <img class="upload-photo" id="foto3" src="http://placehold.it/180" alt="foto" />
+                        <img class="upload-photo" id="foto4" src="http://placehold.it/180" alt="foto" />
+                        <img class="upload-photo" id="foto5" src="http://placehold.it/180" alt="foto" />
+                        <img class="upload-photo" id="foto6" src="http://placehold.it/180" alt="foto" />
+                        <img class="upload-photo" id="foto7" src="http://placehold.it/180" alt="foto" />
+                        <img class="upload-photo" id="foto8" src="http://placehold.it/180" alt="foto" />
+                    </form> 
+                </div>
+          </div>
+        </section>
+        
+        <!-- Ends fotos section-->
+        
+        <!-- regydisp section-->
+        
+        <section class="regydisp">
+            <div class="row">
+                <div class="col span-1-of-2 reglamento">
+                    <h2>Reglamento</h2>
+                    <div class="row">
+                        <form method="post" action="#" class="reglas-form">
+                            <div class="row">
+                                <div class="col span-3-of-4">
+                                    <textarea name="message" placeholder="Esta área es para exponer las reglas que tendrá su hogar.      
+
+Recomendamos escribirlo en forma de lista..."></textarea>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col span-1-of-2 disponibilidad">
+                    <h2>Disponibilidad anfitrión</h2>
+                    <p>Haz click en los campos para seleccionar las fechas en que los usuarios pueden agendar una cita para ver la casa<br><br></p>
+                     
+                        <table id="myTable" class="tabladisp">
+                            <tr>
+                                <th>Hra\Día</th>
+                                <th>Lun</th>
+                                <th>Mar</th>
+                                <th>Mier</th>
+                                <th>Jue</th>
+                                <th>Vie</th>
+                            </tr>
+                            <tr>
+                                <td>8-9</td>
+                                <td id="1"  class="edo" onclick="selected(1)">Ocupado</td>
+                                <td id="2"  class="edo" onclick="selected(2)">Ocupado</td>
+                                <td id="3"  class="edo" onclick="selected(3)">Ocupado</td>
+                                <td id="4"  class="edo" onclick="selected(4)">Ocupado</td>
+                                <td id="5"  class="edo" onclick="selected(5)">Ocupado</td>
+                                
+                            
+                            </tr>
+                            <tr>
+                                <td>9-10</td>
+                                <td id="6"  class="edo" onclick="selected(6)">Ocupado</td>
+                                <td id="7"  class="edo" onclick="selected(7)">Ocupado</td>
+                                <td id="8"  class="edo" onclick="selected(8)">Ocupado</td>
+                                <td id="9"  class="edo" onclick="selected(9)">Ocupado</td>
+                                <td id="10" class="edo" onclick="selected(10)">Ocupado</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>10-11</td>
+                                <td id="11"  class="edo" onclick="selected(11)">Ocupado</td>
+                                <td id="12"  class="edo" onclick="selected(12)">Ocupado</td>
+                                <td id="13"  class="edo" onclick="selected(13)">Ocupado</td>
+                                <td id="14"  class="edo" onclick="selected(14)">Ocupado</td>
+                                <td id="15"  class="edo" onclick="selected(15)">Ocupado</td>
+
+                            </tr>
+                            <tr>
+                                <td>16-17</td>
+                                <td id="16"  class="edo" onclick="selected(16)">Ocupado</td>
+                                <td id="17"  class="edo" onclick="selected(17)">Ocupado</td>
+                                <td id="18"  class="edo" onclick="selected(18)">Ocupado</td>
+                                <td id="19"  class="edo" onclick="selected(19)">Ocupado</td>
+                                <td id="20"  class="edo" onclick="selected(20)">Ocupado</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>17-18</td>
+                                <td id="21"  class="edo" onclick="selected(21)">Ocupado</td>
+                                <td id="22"  class="edo" onclick="selected(22)">Ocupado</td>
+                                <td id="23"  class="edo" onclick="selected(23)">Ocupado</td>
+                                <td id="24"  class="edo" onclick="selected(24)">Ocupado</td>
+                                <td id="25"  class="edo" onclick="selected(25)">Ocupado</td>
+                                
+                                
+                            </tr>
+                        </table>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ends regydisp section-->
+        
+        <script>
+            function selected(id) {
+                var edo = document.getElementById(id).innerHTML;
+                
+                if(edo == 'Disponible'){
+                    document.getElementById(id).innerHTML = 'Ocupado';
+                    document.getElementById(id).style.fontWeight = "300";
+                    document.getElementById(id).style.color = "#c6c6c6";
+                }
+                else{
+                    document.getElementById(id).innerHTML = 'Disponible';
+                    document.getElementById(id).style.fontWeight = "bold";
+                    document.getElementById(id).style.color = "#669999";
+
+                }
+
+                
+                
+                
+            }
+        </script>
+    
+        
+        
+        <footer>
+            <div class="row">
+                <div class=" col span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">IOS App</a></li>
+                        <li><a href="#">Android App</a></li>
+                    </ul>
+                </div>
+                <div class=" col span-1-of-2">
+                    <ul class="social-links">
+                        <li><a href="#"><ion-icon name="logo-facebook" class="facebook-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter" class="twitter-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-googleplus" class="googleplus-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram" class="instagram-logo"></ion-icon></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Copyright &copy; 2015 by Omnifood. All rights reserved.
+                </p>
+            </div>
+        </footer>
+        
+    
+            
+        <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="mobile-nav.js"></script>
+        <script src="vendors/js/jquery.waypoints.min.js"></script>
+        <script src="animation-verCasa.js"></script>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    for (i = 0; i < input.files.length; i++) {
+                        var reader = new FileReader();
+                        const count = i+1;
+                        reader.onload = function (e) {                            
+                            $(`#foto${count}`)
+                                .attr('src', e.target.result);
+                        };
+
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+            }
+        </script>
+
+        
+    </body>
+</html>

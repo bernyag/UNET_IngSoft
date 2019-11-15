@@ -1,0 +1,727 @@
+/* ---------------------------------------------------------------------*/
+/* BASIC SETUP */
+/* ---------------------------------------------------------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------------------*/
+/* GENERALES */
+/* ---------------------------------------------------------------------*/
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+    
+}
+
+section{
+    padding: 80px 0;
+}
+
+.box{
+    padding: 1%;
+}
+
+
+/* ------HEADINGS------*/
+h1,
+h2{
+    font-weight: 300;
+    text-transform: uppercase;
+    word-spacing: 4px;
+    
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 200%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+
+}
+
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: #669999;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+    
+}
+
+h3{
+    font-size: 110%;
+    margin-bottom: 15px; 
+}
+
+/* ------LINKS-----*/
+
+a:link,
+a:visited{
+    color: #669999;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #669999;
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active{
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* ------BUTTONS-----*/
+.btn:link, 
+.btn:visited,
+input[type=submit]{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    color: #fff;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit]{
+    background-color: #669999;
+    border: 1px solid #669999;
+    color: #fff;
+    margin-right: 16px;
+}
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #669999;
+    color: #669999;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color: #548181;
+}
+
+.btn-full:hover,
+.btn-full:active
+{
+    border: 1px solid #548181;
+    
+}
+.btn-ghost:hover,
+.btn-ghost:active{
+    border: 1px solid #548181;
+    color: #fff;
+}
+
+/* ------ICONS-----*/
+.icon-big{
+    font-size: 300%;
+    display: block;
+    color: #669999;
+    padding-bottom: 10px;
+}
+
+.icon-nav{
+    font-size: 200%;
+    display: block;
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------------------*/
+/* HEADER */
+/* ---------------------------------------------------------------------*/
+
+.logo-header{
+    height: 100px;
+    width: auto;
+    vertical-align: middle;
+    padding-top: 30px;
+    float: left;
+    display: block;
+}
+
+.logo-nav{
+    display: none;
+    height: 58px;
+    width: auto;
+    vertical-align: middle;
+    padding-top: 10px;
+    float: left;
+}
+
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0)), url(img/casa3.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.texto-principal{
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Main navigation*/
+
+.main-nav{
+    list-style: none;
+    float: right;
+    margin-top: 55px;
+}
+
+.main-nav li{
+    display: inline-block;
+    margin-left: 35px;
+    font-weight: 400;
+}
+
+.main-nav li .icon-nav{ 
+    font-size: 350%; 
+    display: inline-block;
+}
+
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #669999;;
+}
+
+/*Mobile navigation*/
+.mobile-nav-icon{
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon ion-icon{
+    font-size: 200%;
+    color: #669999;
+}
+
+
+/*Sticky navigation*/
+.sticky{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0)), url(../html/img/navfoto.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: fixed;
+    padding: 7px 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #eaeaea;
+    z-index: 9999;
+}
+
+.sticky .main-nav{
+    margin: 12px 0;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited{
+    padding: 8px 0px;
+    color: #fff;
+}
+.sticky .main-nav li .icon-nav{ color: #fff; }
+
+.sticky .logo-header{ display: none; }
+.sticky .logo-nav{display: block; }
+
+/* ---------------------------------------------------------------------*/
+/* QUIENES SOMOS */
+/* ---------------------------------------------------------------------*/
+
+.texto-largo{
+    line-height: 150%;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.quienes-somos h3{
+    width: 95%;
+    font-size: 95%;
+}
+.texto-corto{
+    text-align: justify;
+    font-size: 90%;
+    width: 95%;
+    line-height: 140%;
+}
+
+/* ---------------------------------------------------------------------*/
+/* SIGN UP */
+/* ---------------------------------------------------------------------*/
+
+.sign-up{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.30),rgba(0, 0, 0, 0)), url(img/casa2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.sign-up h2{ color: #fff; }
+.sign-up h3{ text-align: center; }
+
+
+
+.cuenta-box ul{
+    list-style: none;
+}
+.cuenta-box ul li{
+    margin-bottom: 20px;
+}
+.cuenta-box li input{
+    margin-left: 10px;
+}
+
+
+
+.sesion-text{
+    font-size: 90%;
+}
+
+
+.cuenta-box{
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #555;
+    border-radius: 5px;
+    width: 90%;
+    border: 1px solid #548181;
+    height: 520px;
+}
+
+.cuenta-box div{
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.cuenta-box div:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.cuenta-box div:last-child{
+    text-align: center;
+    border: 0;
+}
+
+.cuenta-box input[type=text],
+.cuenta-box input[type=email],
+.cuenta-box input[type=password]{
+    width: 50%;
+    padding: 5px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    float: right;
+    margin-right: 1px;
+    
+}
+
+.cuenta-box input[type=checkbox]{
+    margin-right: 10px;
+}
+
+
+.cuenta-box li{
+    font-size: 70%;
+    padding-bottom: 10px;
+}
+.cuenta-box ul li:last-child{
+    font-size: 60%;
+    padding-top: 30px;
+}
+
+.cuenta-box a{ margin-left: 20px; }
+
+
+/* ---------------------------------------------------------------------*/
+/*  Crear cuenta pop up */
+/* ---------------------------------------------------------------------*/
+
+/* Full-width input fields */
+.modal input[type=text], 
+.modal input[type=password],
+.modal input[type=email] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Liga para abrir Pop-Up */
+
+.cuenta-box span{
+    display: block;
+    font-size: 100%;
+    color: #669999;
+    margin-top: 20px;
+}
+.cuenta-box span:hover{
+   border-bottom: 1px solid;
+    color: #407272;
+}
+
+/* Info de tipos de cuentas */
+
+.container .info-cuentas{
+    height: 520px;
+    margin-left: 10px;
+    font-size: 80%;
+}
+
+.info-cuentas p{
+    padding-top: 10px;
+    margin-left: 10px;
+}
+.info-cuentas h3{
+    margin-top: 20px;
+    margin-left: 25%;
+    text-align: center;
+    border-bottom: 1px solid #669999;
+    width: 50%;
+}
+.info-cuentas h3:last-of-type{
+    margin-top: 50px;
+}
+
+.info-cuentas ul li{
+    list-style: decimal;
+    margin-bottom: 10px;
+    margin-left: 10%;
+}
+
+.icon-cuenta{
+    font-size: 110%;
+    margin-right: 10px;
+    color: #669999;
+}
+
+
+
+/* Set a style for all buttons */
+ button{
+    font-size: 70%;
+    color: #669999; 
+    margin-top: 20px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 100;
+}
+
+button:hover{
+    color: #000;
+}
+
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+    color: #fff;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 90%; /* Could be more or less, depending on screen size */
+}
+
+.modal input[type=text],
+.modal input[type=email],
+.modal input[type=password]{
+    padding: 5px 10px;
+    width: 70%;
+}
+
+/* Campos crear cuenta */
+.crea-cuenta{
+    border-left: 1px solid #548181;
+}
+
+.container .crea-cuenta ul{
+    margin-top: 10px;
+    list-style: none;
+}
+.container .crea-cuenta ul li{
+    margin-left: 30px;
+    margin-top: 10px;
+    
+}
+
+.container button{
+    background-color: #669999;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.container .crea-cuenta p{
+    font-size: 90%;
+    font-weight: 300;
+    color: #555;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.cancelbtn{
+    margin-left: 90%;
+    margin-bottom: 10px;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+/* ---------------------------------------------------------------------*/
+/*  FUNCIONALIDAD SESSION */
+/* ---------------------------------------------------------------------*/
+
+#default,
+#sesion{
+    font-size: 50%;
+}
+#sesion{
+    display: none;
+}
+
+
+
+
+/* ---------------------------------------------------------------------*/
+/*  FOOTER */
+/* ---------------------------------------------------------------------*/
+
+footer{
+    background-color: #333;
+    padding: 50px;
+    font-size: 80%;
+}
+
+.footer-nav{
+    list-style: none;
+    float: left;
+}
+
+.social-links{
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li, 
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 160%;
+}
+
+.facebook-logo,
+.twitter-logo,
+.googleplus-logo,
+.instagram-logo{
+    -webkit-transition: color 0.4s;
+    transition: color 0.4s;
+}
+
+.facebook-logo:hover{
+    color: #3b5998;
+}
+
+.twitter-logo:hover{
+    color: #00aced;
+}
+
+.googleplus-logo:hover{
+    color: #dd4b39;
+}
+
+.instagram-logo:hover{
+    color: #a7178b;
+}
+
+footer p{
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

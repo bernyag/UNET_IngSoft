@@ -1,0 +1,248 @@
+!DOCTYPE html>
+<html lang="es">
+    <head>
+        
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" type="text/css" href="style-miHospedaje.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="Grid.css">
+        <link rel="stylesheet" type="text/css" href="responsive.css">
+        <title>myhaus - Mi Hospedaje</title>
+        <link rel="icon" type="image/ico" href="img/logo-negro.png" />
+    </head>
+    
+    <body>
+        <nav class="sticky">
+                <div class="row">
+                    <a href="../index.html"><img src="img/logo-blanco.png" alt="Logo myHaus" class="logo-nav"></a>
+                    <ul class="main-nav js--main-nav " id="tipo-huesped">
+                        <li><a href="rentarCasa.html">Buscar Hogar</a></li>
+                        <li><a href="miHospedaje.html">Mi Hospedaje</a></li>
+                        <li><a href="miCuenta.html"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi cuenta</a></li>
+                    </ul>
+                    
+                    <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
+                </div>
+        </nav>
+        <section class="intro">
+            <div class="margin3 fullscreen">
+                <h1 class="margin2PC">Mi Hogar</h1>
+                <div class="info-cuentas center">
+                    <h3 class="margin2">LOFT DE LUJO EN ALTAVISTA</h3>
+                    <p class="margin2PC">
+                        Actualmente tienes este hogar a tu disposición.
+                        <br><br>
+                        ¡Estás al corriente con tus pagos!
+                        <br><br>
+                        <strong>Tu próximo pago es para el día: 01/06/2019</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="row">
+                <div class="fullscreen">
+                    <div class="col span-2-of-3 margin1 marginsides">
+                        <h3 class="center">ANFITRIÓN</h3>
+                        <div class="col span-1-of-3 margin1">
+                            <img src="img/casa1host.jpg" alt="Hogar 1" class="medium2">                          
+                        </div>
+                        <div class="col span-2-of-3 margin1 paddingleft">
+                            <strong>Jesús García</strong><br><br><br>
+                            Ciudad de México, México.<br><br>
+                            Miembro de myhaus desde: marzo, 2019<br><br>
+
+
+                            - Idiomas: español e inglés<br>
+                            - Tiempo de respuesta promedio: 1 día<br><br>
+
+                            - Rating: 4.5 <ion-icon name="star" class="icon-small"></ion-icon><ion-icon name="star" class="icon-small"></ion-icon><ion-icon name="star" class="icon-small"></ion-icon><ion-icon name="star" class="icon-small"></ion-icon><ion-icon name="star-half" class="icon-small"></ion-icon>
+                            (76 valoraciones)<br><br>
+                        </div>
+                        <div class="col span-2-of-2 acciones">
+                            
+                            <button class="btn btn-ghost btns1 open-button" onclick="openForm('myForm1')">Calificar</button>
+                            <div class="form-popup" id="myForm1">
+                                <form action="/action_page.php" class="form-container">
+                                    <div class="form-content">
+                                        <h3>Calificación</h3>
+                                        <p><em>Selecciona el nivel de satisfacción que has tenido con tu anfitrión en los siguientes rubros:</em></p>
+                                        <br>
+                                        <label for="email">Limpieza: </label>
+                                        <span class="starRating">
+                                            <input id="rating51" type="radio" name="rating1" value="5">
+                                            <label for="rating51">5</label>
+                                            <input id="rating41" type="radio" name="rating1" value="4">
+                                            <label for="rating41">4</label>
+                                            <input id="rating31" type="radio" name="rating1" value="3">
+                                            <label for="rating31">3</label>
+                                            <input id="rating21" type="radio" name="rating1" value="2">
+                                            <label for="rating21">2</label>
+                                            <input id="rating11" type="radio" name="rating1" value="1">
+                                            <label for="rating11">1</label>
+                                        </span>
+                                        <br>
+                                        <br>
+                                        <label for="psw">Servicios: </label>
+                                        <span class="starRating">
+                                            <input id="rating52" type="radio" name="rating2" value="5">
+                                            <label for="rating52">5</label>
+                                            <input id="rating42" type="radio" name="rating2" value="4">
+                                            <label for="rating42">4</label>
+                                            <input id="rating32" type="radio" name="rating2" value="3">
+                                            <label for="rating32">3</label>
+                                            <input id="rating22" type="radio" name="rating2" value="2">
+                                            <label for="rating22">2</label>
+                                            <input id="rating12" type="radio" name="rating2" value="1">
+                                            <label for="rating12">1</label>
+                                        </span>
+                                        <br>
+                                        <br>
+                                        <label for="psw">Ubicación: </label>
+                                        <span class="starRating">
+                                            <input id="rating53" type="radio" name="rating3" value="5">
+                                            <label for="rating53">5</label>
+                                            <input id="rating43" type="radio" name="rating3" value="4">
+                                            <label for="rating43">4</label>
+                                            <input id="rating33" type="radio" name="rating3" value="3">
+                                            <label for="rating33">3</label>
+                                            <input id="rating23" type="radio" name="rating3" value="2">
+                                            <label for="rating23">2</label>
+                                            <input id="rating13" type="radio" name="rating3" value="1">
+                                            <label for="rating13">1</label>
+                                        </span>
+                                        <br>
+                                        <br>
+                                        <label for="psw">Cercanía al ITAM: </label>
+                                        <span class="starRating">
+                                            <input id="rating54" type="radio" name="rating4" value="5">
+                                            <label for="rating54">5</label>
+                                            <input id="rating44" type="radio" name="rating4" value="4">
+                                            <label for="rating44">4</label>
+                                            <input id="rating34" type="radio" name="rating4" value="3">
+                                            <label for="rating34">3</label>
+                                            <input id="rating24" type="radio" name="rating4" value="2">
+                                            <label for="rating24">2</label>
+                                            <input id="rating14" type="radio" name="rating4" value="1">
+                                            <label for="rating14">1</label>
+                                        </span>
+                                    </div>
+                                    <p class="mensaje" id="review1">¡Calificación guardada!</p>
+                                    <ul>
+                                        <li><button type="button" class="btn" onclick="saveReview('review1')">Enviar</button></li>
+                                        <li><button type="button" class="btn cancel" onclick="closeForm('myForm1')">Cerrar</button></li>
+                                    </ul>
+                                </form>
+                            </div> 
+                            <button class="btn btn-ghost btns1 open-button" onclick="openForm('myForm2')">Contactar</button>
+                            <div class="form-popup" id="myForm2">
+                                <form action="/action_page.php" class="form-container">
+                                    <div class="form-content">
+                                        <div>
+                                            <ul>
+                                                <br>
+                                                <li class="formmail">Tu correo:<input type="email" name="correo" id="correo" placeholder="nombre@example.com" required></li> <br><br>
+                                                <li class="formmail">Mensaje: <br><textarea name="message" id="message" placeholder="Escribe aquí tu mensaje..." > </textarea></li><br>
+                                                <li><input type="checkbox" name="recordar" id="recordar" > Notificar por correo</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="mensaje" id="review2">¡Correo enviado!</p>
+                                    <ul>
+                                        <li><button type="button" class="btn" onclick="saveReview('review2')">Enviar</button></li>
+                                        <li><button type="button" class="btn cancel" onclick="closeForm('myForm2')">Cerrar</button></li>
+                                    </ul>
+                                </form>
+                            </div> 
+                        </div>
+                        <div class="col span-2-of-2">
+                            <button class="btn btn-full btns2" onclick="hacerPago()">Hacer Pago</button>                      
+                        </div>
+
+                    </div>
+                    <div class="col span-2-of-2">
+                        <div class="wide-separator-line"></div>
+                    </div>
+                    <div class="col span-2-of-2" margin3>
+                        <h3 class="center">REGLAMENTO DEL HOGAR</h3>
+                        <ul class="texto-largo">
+                            <li>Mantenga puntualidad de pagos para asegurarse de recibir un buen comentario por parte de su anfitrión.</li><br>
+                            <li>No se permite el consumo de cualquier sustancia ilegal.</li><br>
+                            <li>Prohibido fumar dentro del hogar.</li><br>
+                        </ul>
+                    </div>
+                    <div class="col span-2-of-2">
+                        <div class="wide-separator-line"></div>
+                    </div>
+                    <div class="col span-2-of-2 margin1">
+                        <h3 class="center">DESCRIPCIÓN DEL HOGAR</h3>
+                            <ul class="texto-largo">
+                                <li>Ambiente hogareño ideal para estadías prolongadas.</li><br>
+                                <li>Acceso por tranquila y silenciosa calle empedrada, a veinte pasos del Periférico Sur.</li><br>
+                                <li>Lugares de interés: Televisa, ITAM, Ciudad Universitaria, Hospital Angeles, Coyoacán y San Angel. Zona de arte y cultura.</li><br>
+                                <li>Ambiente tranquilo por las las zonas exteriores jardinadas, el vecindario y la luz.</li><br>
+                                <li>Ideal para profesores, alumnos de posgrado, profesionistas y parejas</li><br>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <footer>
+            <div class="row">
+                <div class=" col span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">IOS App</a></li>
+                        <li><a href="#">Android App</a></li>
+                    </ul>
+                </div>
+                <div class=" col span-1-of-2">
+                    <ul class="social-links">
+                        <li><a href="#"><ion-icon name="logo-facebook" class="facebook-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter" class="twitter-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-googleplus" class="googleplus-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram" class="instagram-logo"></ion-icon></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Copyright &copy; 2019 by myhaus. All rights reserved.
+                </p>
+            </div>
+        </footer>        
+        
+        <script>
+            function openForm(form) {
+                document.getElementById(form).style.display = "block";
+            }
+            
+
+            function saveReview(review){
+                document.getElementById(review).style.display = "block";
+            }
+
+            function closeForm(form) {
+                document.getElementById(form).style.display = "none";
+                document.getElementById("review1").style.display = "none";
+                document.getElementById("review2").style.display = "none";
+            }
+            
+            function hacerPago(){
+                alert("Lo sentimos, por el momento no está disponible esta funcionalidad. ¡Estamos trabajando para dejarla lista lo más pronto posible!");
+            }
+            
+        </script>
+                        
+        
+        <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="mobile-nav.js"></script>
+        
+    </body>
+</html>
