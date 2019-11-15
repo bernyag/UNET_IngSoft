@@ -68,7 +68,7 @@ h2{
 h2:after{
     display: block;
     height: 2px;
-    background-color: #669999;
+    background-color: #23dd6a;
     content: " ";
     width: 100px;
     margin: 0 auto;
@@ -85,10 +85,10 @@ h3{
 
 a:link,
 a:visited{
-    color: #669999;
+    color: #23dd6a;
     text-decoration: none;
     padding-bottom: 1px;
-    border-bottom: 1px solid #669999;
+    border-bottom: 1px solid #23dd6a;
     -webkit-transition: border-bottom 0.2s, color 0.2s;
     transition: border-bottom 0.2s, color 0.2s;
 }
@@ -116,33 +116,32 @@ input[type=submit]{
 .btn-full:link,
 .btn-full:visited,
 input[type=submit]{
-    background-color: #669999;
-    border: 1px solid #669999;
+    background-color: #23dd6a;
+    border: 1px solid #23dd6a;
     color: #fff;
     margin-right: 16px;
 }
 .btn-ghost:link,
 .btn-ghost:visited{
-    border: 1px solid #669999;
-    color: #669999;
+    border: 1px solid #23dd6a;
+    color: #23dd6a;
 }
 
 .btn:hover,
 .btn:active,
 input[type=submit]:hover,
 input[type=submit]:active{
-    background-color: #548181;
+    background-color: #1cb858;
 }
 
 .btn-full:hover,
 .btn-full:active
 {
-    border: 1px solid #548181;
-    
+    border: 1px solid #1cb858;
 }
 .btn-ghost:hover,
 .btn-ghost:active{
-    border: 1px solid #548181;
+    border: 1px solid #1cb858;
     color: #fff;
 }
 
@@ -150,7 +149,7 @@ input[type=submit]:active{
 .icon-big{
     font-size: 300%;
     display: block;
-    color: #669999;
+    color: #23dd6a;
     padding-bottom: 10px;
 }
 
@@ -223,7 +222,7 @@ header{
 
 .main-nav li a:hover,
 .main-nav li a:active {
-    border-bottom: 2px solid #669999;;
+    border-bottom: 2px solid #23dd6a;;
 }
 
 /*Mobile navigation*/
@@ -236,7 +235,7 @@ header{
 
 .mobile-nav-icon ion-icon{
     font-size: 200%;
-    color: #669999;
+    color: #23dd6a;
 }
 
 
@@ -292,7 +291,7 @@ header{
     color: #555;
     border-radius: 5px;
     width: 90%;
-    border: 1px solid #548181;
+    border: 1px solid #23dd6a;
     height: 520px;
 }
 
@@ -361,12 +360,12 @@ header{
 .cuenta-box span{
     display: block;
     font-size: 100%;
-    color: #669999;
+    color: #23dd6a;
     margin-top: 20px;
 }
 .cuenta-box span:hover{
    border-bottom: 1px solid;
-    color: #407272;
+    color: #23dd6a;
 }
 
 /* Campos crear cuenta */
@@ -379,6 +378,8 @@ header{
     text-align: center;
     margin-top: 10px;
     list-style: none;
+    border-bottom: 1px solid #23dd6a;
+    width: 50%;
 }
 .container .crea-cuenta ul li{
     text-align: left;    
@@ -402,6 +403,11 @@ header{
     width: 80%;
     text-align: center;
     margin-left: 10%;
+  
+.icon-cuenta{
+    font-size: 110%;
+    margin-right: 10px;
+    color: #23dd6a;
 }
 
 .container .crea-cuenta p{
@@ -417,7 +423,7 @@ header{
 /* Set a style for all buttons */
  button{
     font-size: 70%;
-    color: #669999; 
+    color: #23dd6a; 
     margin-top: 20px;
     background-color: transparent;
     border: 0;
@@ -487,7 +493,6 @@ span.psw {
     padding: 5px 10px;
     width: 70%;
 }
-
 
 /* The Close Button (x) */
 .close {
