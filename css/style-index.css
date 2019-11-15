@@ -62,6 +62,7 @@ h2{
     word-spacing: 2px;
     text-align: center;
     margin-bottom: 30px;
+    margin-top: 50px;
     letter-spacing: 1px;
 }
 
@@ -156,7 +157,7 @@ input[type=submit]:active{
 .icon-nav{
     font-size: 200%;
     display: block;
-    color: #fff;
+    color: #000;
 }
 
 
@@ -182,11 +183,7 @@ input[type=submit]:active{
     float: left;
 }
 
-header{
-    height: 100vh;
-    
-    
-}
+
 
 
 /* Main navigation*/
@@ -195,6 +192,7 @@ header{
     list-style: none;
     float: right;
     margin-top: 55px;
+    color: #000;
 }
 
 .main-nav li{
@@ -212,7 +210,7 @@ header{
 .main-nav li a:link,
 .main-nav li a:visited {
     padding: 8px 0px;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 90%;
@@ -220,9 +218,10 @@ header{
     transition: border-bottom 0.2s;
 }
 
-.main-nav li a:hover,
-.main-nav li a:active {
-    border-bottom: 2px solid #23dd6a;;
+.sticky .main-nav li a:hover,
+.sticky .main-nav li a:active {
+    border-bottom: 2px solid #23dd6a;
+    color: #aaa;
 }
 
 /*Mobile navigation*/
@@ -241,16 +240,16 @@ header{
 
 /*Sticky navigation*/
 .sticky{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0)), url(../html/img/navfoto.jpg);
+    color: #000;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-color: #fff;
     position: fixed;
     padding: 7px 0;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #eaeaea;
     z-index: 9999;
 }
 
@@ -261,9 +260,9 @@ header{
 .sticky .main-nav li a:link,
 .sticky .main-nav li a:visited{
     padding: 8px 0px;
-    color: #fff;
+    color: #000;
 }
-.sticky .main-nav li .icon-nav{ color: #fff; }
+.sticky .main-nav li .icon-nav{ color: #000; }
 
 .sticky .logo-header{ display: none; }
 .sticky .logo-nav{display: block; }
@@ -271,6 +270,10 @@ header{
 /* ---------------------------------------------------------------------*/
 /* SIGN UP / SIGN IN */
 /* ---------------------------------------------------------------------*/
+
+.inicio-sesion{
+    background-color: #6610f2;
+}
 
 .sesion-text{
     font-size: 90%;
@@ -394,7 +397,7 @@ header{
 }
 
 .container button{
-    background-color: #669999;
+    background-color: #23dd6a;
     color: white;
     padding: 14px 20px;
     margin-top: 30px;
@@ -403,6 +406,7 @@ header{
     width: 80%;
     text-align: center;
     margin-left: 10%;
+}
   
 .icon-cuenta{
     font-size: 110%;

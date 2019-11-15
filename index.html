@@ -15,10 +15,10 @@
     
     <body onload="iniciaSesion()">
         <header>
-            <nav>
+            <nav class="sticky">
                 <div class="row">
-                    <img src="imgs/logo.png" alt="Logo Unet" class="logo-header">
-                    <img src="imgs/logo.png" alt="Logo Unet" class="logo-nav"> 
+                    <img src="imgs/logo-black.png" alt="Logo Unet" class="logo-header">
+                    <img src="imgs/logo-black.png" alt="Logo Unet" class="logo-nav"> 
                     
                     <ul class="main-nav js--main-nav" id="default-nav">
                        
@@ -30,33 +30,37 @@
                     <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
                 </div>
             </nav>
+        </header>
             
+        <section>
             <div class="row">
-                <h2>Comienza a rentar hoy mismo</h2>
+                <h2>¡Organízate y sácale el máximo provecho a tus estudios!</h2>
             </div>
             <div class="row">
-                <div class="col span-1-of-3"></div>
-                <div class="col span-1-of-3">
-                    <div class="cuenta-box">
-                        <div>
-                            <h3>Inicia sesión</h3>
-                            <p class="sesion-text"> <em>Si ya tienes cuenta, inicia sesión para poder rentar </em><br> &nbsp; </p>
-                        </div>
-                        <div>
-                            <ul>
-                                <li>Correo:<input type="email" name="correo" id="correo" placeholder="nombre@example.com" required></li>
-                                <li>Contraseña:<input type="password" name="pswd" id="pswd" placeholder="contraseña" required> </li>
-                                <li><input type="checkbox" name="recordar" id="recordar" > Recordar contraseña</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <a href="#" class="btn btn-full">Iniciar sesión</a>
-                            <br>
-                            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span>¿No tienes cuenta? ¡Regístrate ahora!</span></button>
-                            
+                <div class="col span-1-of-2 inicia-sesion" >
+                    <div class="col span-1-of-1">
+                        <div class="cuenta-box">
+                            <div>
+                                <h3>Inicia sesión</h3>
+                                <p class="sesion-text"> <em>Si ya tienes cuenta, inicia sesión para poder rentar </em><br> &nbsp; </p>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>Correo:<input type="email" name="correo" id="correo" placeholder="nombre@example.com" required></li>
+                                    <li>Contraseña:<input type="password" name="pswd" id="pswd" placeholder="contraseña" required> </li>
+                                    <li><input type="checkbox" name="recordar" id="recordar" > Recordar contraseña</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-full">Iniciar sesión</a>
+                                <br>
+                                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span>¿No tienes cuenta? ¡Regístrate ahora!</span></button>
+
+                            </div>
                         </div>
                     </div>
                 </div>
+
 
                 <div id="id01" class="modal">
 
@@ -93,7 +97,7 @@
                     </form>
                 </div>
             </div>
-        </header>
+        </section>
         
         <script>
             // Get the modal
