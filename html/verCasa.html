@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style-verCasa.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="Grid.css">
+        <link rel="stylesheet" type="text/css" href="responsive.css">
+        <link rel="stylesheet" type="text/css" href="/css/querries-home.css">
+        <title>myhaus - Rentas</title>
+        <link rel="icon" type="image/ico" href="img/logo-negro.png" />
+        
+        
+    </head>
+    <body onload="iniciaSesion()">
+        <nav class="sticky">
+                <div class="row">
+                    <a href="../index.html"><img src="img/logo-blanco.png" alt="Logo myHaus" class="logo-nav"></a>
+                    <ul class="main-nav js--main-nav ">
+                        <li><a href="rentarCasa.html" id="tipo-huesped1">Buscar Hogar</a></li>
+                        <li><a href="ofreceHogar2.html" id="tipo-anfitrion1">Ofrecer Hogar</a></li>
+                        <li><a href="miHospedaje.html" id="tipo-huesped2">Mi Hospedaje</a></li>
+                        <li><a href="vistaPropiedades.html" id="tipo-anfitrion2">Mis Hogares</a></li>
+                        <li><a href="miCuenta.html" id="sesion"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi Cuenta</a></li>
+                        <li><a href="../index.html#inicio-sesion" id="default"><ion-icon name="contact" class="icon-nav"></ion-icon>Iniciar Sesion</a></li>
+                        
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
+                </div>
+        </nav>
+        
+        
+        <!-- Intro section-->
+        
+        <section class="intro">
+            <div>
+                <h1>Loft de lujo en Altavista</h1>
+                <a class="btn btn-full js--scroll-to-contact" id="btn-contacto" href="#">Contactar dueño</a>
+            </div>
+        </section>
+        
+        <!-- Endsv intro section-->
+        
+        
+         <!-- Descripcion section-->
+        
+        <section class="descripcion">
+            <div class="row">
+                <h2>Descripción</h2>
+            </div>
+            <div class="row descripcion-general">
+                <ul>
+                    <li>2 Huéspedes</li>
+                    <li>1 Recámara</li>
+                    <li>1 Cama</li>
+                    <li>1.5 Baños</li>
+                    <li>Cocina</li> 
+                </ul>
+                
+            </div>
+            <div class="row">
+                <div class="col span-2-of-2">
+                    <ul class="row descripcion-especifica">
+                        <li>Es un pequeño departamento/loft nuevo y acogedor, moderno y hermosamente adornado. Tiene todo lo necesario tanto en servicios como en comodidad. Contamos con seguridad y servicio de estacionamiento.</li>
+                        <li>Es un edificio que está localizado en una muy buena zona geográfica, pues está cerca de la Calle Altavista y muy cerca del ITAM.</li>
+                        <li>Ambiente hogareño ideal para estadías prolongadas.</li>
+                        <li>Acceso por tranquila y silenciosa calle empedrada, a veinte pasos del Periférico Sur.</li>
+                        <li>Lugares de interés: Televisa, ITAM, Ciudad Universitaria, Hospital Angeles, Coyoacán y San Angel. Zona de arte y cultura. </li>
+                        <li>Ideal para profesores, alumnos de posgrado, profesionistas y parejas. </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ends descripcion section-->
+        
+
+        
+        
+        <!-- fototeca section-->
+        
+        <section class="fototeca">
+            <div class="row">
+                <h2>Fotografías</h2>
+            </div>
+            <div class="area-fotos">
+                
+                <ul class="fotos-carrusel clearfix">
+                    <li>
+                        <figure class="foto">
+                            <img src="img/LoftLujo/1.png" alt="Foto 1">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="foto">
+                            <img src="img/LoftLujo/2.jpg" alt="Foto 2">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="foto">
+                            <img src="img/LoftLujo/3.jpg" alt="Foto 3">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="foto">
+                            <img src="img/LoftLujo/4.jpg" alt="Foto 4">
+                        </figure>
+                    </li>
+                </ul>
+                
+                <ul class="fotos-carrusel clearfix">
+                    <li>
+                        <figure class="foto">
+                            <img src="img/LoftLujo/5.jpg" alt="Foto 5">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="foto">
+                            <img src="img/LoftLujo/6.jpg" alt="Foto 6">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="foto">
+                            <img src="img/LoftLujo/7.jpg" alt="Foto 7">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="foto">
+                            <img src="img/LoftLujo/8.jpg" alt="Foto 8">
+                        </figure>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Ends fototeca section-->
+        
+        <!-- Servicios section-->
+        
+        <section class="servicios">
+            
+            <div class="row">
+                <div class="col span-1-of-2 serv-list">
+                    <div class="row"> 
+                        <h2>Servicios</h2>
+                    </div>
+                    <div class="row ">
+                        <div class="un-servicio">
+                            <ion-icon name="logo-rss" class="icon-big"></ion-icon>
+                            <h4>Wifi</h4>
+                        </div>
+                        <div class="un-servicio">
+                            <ion-icon name="basket" class="icon-big"></ion-icon>
+                            <h4>Cocina completa</h4>
+                        </div>
+                        <div class="un-servicio">
+
+                            <ion-icon name="alarm" class="icon-big"></ion-icon>
+                            <h4>Llegada libre</h4>
+                        </div>
+                        <div class="un-servicio">
+                            <ion-icon name="videocam" class="icon-big"></ion-icon>
+                            <h4>Seguridad Privada</h4>
+                        </div>
+                        <div class="un-servicio">
+                            <ion-icon name="pin" class="icon-big"></ion-icon>
+                            <h4>Cerca del ITAM</h4>
+                        </div>
+                        <div class="un-servicio">
+                            <ion-icon name="paw" class="icon-big"></ion-icon>
+                            <h4>Mascotas</h4>
+                        </div>
+                        <div class="un-servicio">
+                            <ion-icon name="logo-no-smoking" class="icon-big"></ion-icon>
+                            <h4>No apto para fumadores</h4>
+                        </div>
+                        <div class="un-servicio">      
+                            <ion-icon name="car" class="icon-big"></ion-icon>
+                            <h4>Estacionamiento</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col span-1-of-2 reglas">
+                    <div class="row"> 
+                        <h2>Reglamento</h2>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>Se permiten visitas, siempre y cuando hayan avisado con tiempo</li>
+                            <li>Prohibido fumar</li>
+                            <li>Prohibido organizar fiestas y eventos</li>
+                            <li>Horario de llegada 8:00 a 21:00 hrs</li>
+                            <li>Se pueden llevar mascotas</li>
+                            <li>Siempre dejar ventanas y puertas cerradas al salir</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            
+        </section>
+        
+        <!-- Ends servicios section-->
+        
+        
+        <!-- calificacion section-->
+        
+        <section class="calificacion">
+            <div class="row">
+                <h2>Calificación y Comentarios</h2>
+            </div>
+            <div class="row ">
+                <div class="col span-1-of-4 ">
+                    
+                    <ul >
+                        <li>Limpieza <br />
+                            <progress min="0" max="100" value="80"></progress>
+                        </li>
+                        <li>Servicios de la Casa<br />
+                            <progress min="0" max="100" value="50"></progress>
+                        </li>
+                        <li>Ubicación <br />
+                            <progress min="0" max="100" value="70"></progress>
+                        </li>
+                        <li>Cercanía al ITAM <br />
+                            <progress min="0" max="100" value="80"></progress>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div class="col span-1-of-4">
+                    <blockquote>
+                        La casa está increible! Las fotografías de myhaus son identicas a lo que recibes en la casa. Me encanto!
+                        <cite><img src="img/ComentariosUsuarios/customer-1.jpg">Alberto Pérez</cite>
+                    </blockquote>
+                </div>
+                <div class="col span-1-of-4">
+                    <blockquote>
+                       Me pareció una gran casa! Yo viví un año ahi y todo, tanto la ubicación como la vecindad es ideal para cualquier estudiante! La recomiendo mucho.
+                        <cite><img src="img/ComentariosUsuarios/customer-2.jpg">Joana Silva</cite>
+                    </blockquote>
+                </div>
+                <div class="col span-1-of-4">
+                    <blockquote>
+                     Me encanto! El host Jesus es muy atento y siempre cuida todos los detalles de la presentación de la casa. Además esta muy cerca del ITAM! 
+                    <cite><img src="img/ComentariosUsuarios/customer-3.jpg">Emiliano Suarez</cite>
+                    </blockquote>
+                </div>
+                
+
+            </div>
+            
+        </section>
+        
+        <!-- Ends calificacion section-->
+        
+        
+
+        
+        
+        <!-- host section-->
+        
+        <section class="host">
+            <div class="row">
+                <h2>Anfitrión</h2>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-2 info-host">
+                    <h3>Conoce a Jesús:</h3>
+                    
+                    <div class="foto-host">
+                    <img src="img/casa1host.jpg" alt="Hogar 1" class="medium">
+                    </div>
+                    
+                    <div class="datos-host">
+                    <p>
+                    <strong>Jesús García</strong><br><br><br>
+                        Ciudad de México, México.<br><br>
+                        Miembro de myhaus desde: marzo, 2019<br><br>
+
+
+                        - Idiomas: español e inglés<br>
+                        - Tiempo de respuesta promedio: 1 día<br><br>
+
+                        - Rating: 4.5 (76 valoraciones)<br><br><br><br>
+                    </p>
+                    </div>
+                    
+                
+                </div>
+                
+                <div class="col span-1-of-2 tabladisp">
+                        <h3>Disponibilidad de Cita con Jesús</h3>
+                        <table>
+                            <tr>
+                                <th>Día</th>
+                                <th>Lun</th>
+                                <th>Mar</th>
+                                <th>Mier</th>
+                                <th>Jue</th>
+                                <th>Vie</th>
+                            </tr>
+                            <tr>
+                                <td>8-9</td>
+                                <td class="selected">Libre</td>
+                                <td class="selected">Libre</td>
+                                <td class="ocupado">Ocupado</td>
+                                <td class="ocupado">Ocupado</td>
+                                <td class="ocupado">Ocupado</td>
+                            </tr>
+                            <tr>
+                                <td>9-10</td>
+                                <td class="selected">Libre</td>
+                                <td class="selected">Libre</td>
+                                <td class="selected">Libre</td>
+                                <td class="selected">Libre</td>
+                                <td class="ocupado">Ocupado</td>
+                            </tr>
+                            <tr>
+                                <td>10-11</td>
+                                <td class="selected">Libre</td>
+                                <td class="ocupado">Ocupado</td>
+                                <td class="selected">Libre</td>
+                                <td class="selected">Libre</td>
+                                <td class="selected">Libre</td>
+                            </tr>
+                            <tr>
+                                <td>4-5</td>
+                                <td class="ocupado">Ocupado</td>
+                                <td class="ocupado">Ocupado</td>
+                                <td class="ocupado">Ocupado</td>
+                                <td class="selected">Libre</td>
+                                <td class="ocupado">Ocupado</td>
+                            </tr>
+                            <tr>
+                                <td>5-6</td>
+                                <td class="ocupado">Ocupado</td>
+                                <td class="ocupado">Ocupado</td>
+                                <td class="ocupado">Ocupado</td>
+                                <td class="selected">Libre</td>
+                                <td class="selected">Libre</td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ends host section-->
+        
+        
+        
+        
+        <!-- contacto section-->
+        
+        <section class="section-form js--section-contact">
+            
+            <div class="row">
+                <h2>Contacta al Anfitrión</h2>
+            </div>
+            <div class="row">
+                <form method="post" action="#" class="contact-form">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Correo/Usuario</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="name" id="name" placeholder="Usuario" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="email">Contraseña</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="find-us">¿En que estás interesado?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <select name="find-us" id="find-us">
+                                <option value="friends" selected>Iniciar proceso de renta</option>
+                                <option value="search">Hacer cita para ver la casa</option>
+                                <option value="ad">Quiero más información acerca de la casa</option>
+                                <option value="other">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Escribe tu mensaje para el Anfitrión</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <textarea name="message" placeholder="Tu mensaje"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="submit" value="Enviar" class="boton-enviar">
+                        </div>
+                    </div>
+                    
+                </form>
+                
+            </div>
+        </section>
+        
+        <script>
+            
+            function iniciaSesion(){
+                var usuario = sessionStorage.getItem("tipoUsuario");
+                
+                document.getElementById("tipo-anfitrion1").style.display = "none";
+                document.getElementById("tipo-anfitrion2").style.display = "none";
+                document.getElementById("tipo-huesped2").style.display = "none";
+
+               if(usuario == 'huesped'){
+                    document.getElementById("tipo-huesped1").style.display = "block";
+                    document.getElementById("tipo-huesped2").style.display = "block";
+                    document.getElementById("tipo-anfitrion1").style.display = "none";
+                    document.getElementById("tipo-anfitrion2").style.display = "none";
+                    document.getElementById("default").style.display = "none";
+                    document.getElementById("sesion").style.display = "block";
+                }
+                else{
+                    if(usuario == 'anfitrion' ){
+                        document.getElementById("tipo-anfitrion1").style.display = "block";
+                        document.getElementById("tipo-anfitrion2").style.display = "block";
+                        document.getElementById("tipo-huesped2").style.display = "none";
+                        document.getElementById("default").style.display = "none";
+                        document.getElementById("sesion").style.display = "block";
+
+                    }
+                }
+            } 
+        
+        </script>
+        <!-- Ends contacto section-->
+        
+        <footer>
+            <div class="row">
+                <div class=" col span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">IOS App</a></li>
+                        <li><a href="#">Android App</a></li>
+                    </ul>
+                </div>
+                <div class=" col span-1-of-2">
+                    <ul class="social-links">
+                        <li><a href="#"><ion-icon name="logo-facebook" class="facebook-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter" class="twitter-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-googleplus" class="googleplus-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram" class="instagram-logo"></ion-icon></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Copyright &copy; 2015 by Omnifood. All rights reserved.
+                </p>
+            </div>
+        </footer>
+        
+    
+            
+        <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="mobile-nav.js"></script>
+        <script src="vendors/js/jquery.waypoints.min.js"></script>
+        <script src="animation-verCasa.js"></script>
+
+        
+    </body>
+</html>

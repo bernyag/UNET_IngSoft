@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style-index.css">
+        <link rel="stylesheet" type="text/css" href="css/Grid.css">
+        <link rel="stylesheet" type="text/css" href="css/querries-home.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <link rel="icon" type="image/ico" href="html/img/logo-negro.png" />
+       
+
+        
+        <title>MyHaus</title>
+    </head>
+    
+    <body onload="iniciaSesion()">
+        <header>
+            <nav>
+                <div class="row">
+                    <img src="html/img/logo-blanco.png" alt="Logo myHaus" class="logo-header">
+                    <img src="html/img/logo-blanco.png" alt="Logo myHaus" class="logo-nav"> 
+                    
+                    <ul class="main-nav js--main-nav" id="default-nav">
+                        <li><a href="html/rentarCasa.html" id="tipo-huesped1">Buscar Hogar</a></li>
+                        <li><a href="html/ofreceHogar2.html" id="tipo-anfitrion1">Ofrecer Hogar</a></li>
+                        <li><a href="html/miHospedaje.html" id="tipo-huesped2">Mi Hospedaje</a></li>
+                        <li><a href="html/vistaPropiedades.html" id="tipo-anfitrion2">Mis Hogares</a></li>
+                        <li><a href="html/miCuenta.html" id="sesion"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi Cuenta</a></li>
+                        <li><a href="#inicio-sesion" id="default"><ion-icon name="contact" class="icon-nav"></ion-icon>Iniciar Sesion</a></li>
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
+                </div>
+            </nav>
+            <div class="texto-principal">
+                <h1>MyHaus. <br> Vivir en la ciudad nunca fue tan fácil</h1>
+                <a href="#" class="btn btn-full js--scroll-to-sesion">Inicia sesión</a>
+                <a href="#" class="btn btn-ghost js--scroll-to-info">Conócenos</a>
+            </div>
+            
+        </header>
+        
+        <section class="quienes-somos js--quienes-somos">
+            <div class="row">
+                <h2>¿Quienes somos?</h2>
+                <p class="texto-largo">
+                    Myhaus es una empresa, creada por alumnos del ITAM, que ofrece una plataforma en línea dedicada a la oferta de alojamientos particulares, especialmente para estudiantes que provienen del interior de la república y buscan una estancia prolongada en la capital, mientras llevan a cabo sus estudios.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-4">
+                    <ion-icon name="home" class="icon-big"></ion-icon>
+                    <h3>Renta fácil y seguro</h3>
+                    <p class="texto-corto">Busca y renta tu hogar en la CDMX. ¡Puedes pagar tu mensualidad desde aquí! <br>Mantenemos todos tus datos encriptados para que nadie pueda obtenerlos.</p>
+                </div>
+                <div class="col span-1-of-4">
+                    <ion-icon name="checkmark" class="icon-big"></ion-icon>
+                    <h3>Encuentra tu hogar ideal</h3>
+                    <p class="texto-corto">Explora entre todas las opciones y elige la casa que más se ajuste a tus necesidades. <br>Utiliza los filtros para encontrar rápidamente tu hogar ideal.</p>
+                </div>
+                <div class="col span-1-of-4">
+                    <ion-icon name="school" class="icon-big"></ion-icon>
+                    <h3>Vive cerca de tu universidad</h3>
+                    <p class="texto-corto">Buscamos facilitarte la vida. Así que publicamos hogares en zonas universitarias y cercanas a los colegios más populares de la CDMX.<br>¡Podrás llegar caminando!</p>
+                </div>
+                <div class="col span-1-of-4">
+                    <ion-icon name="contacts" class="icon-big"></ion-icon>
+                    <h3>Vive el ambiente estudiantil</h3>
+                    <p class="texto-corto">Vive la experiencia de estudiar en alguna de las mejores universidades del país. Conoce nuevas personas, o encuentra un roomie, y haz de estos años los mejores de tu vida. </p>
+                </div>
+            </div>
+        
+        
+        </section>
+        
+        <section class="sign-up js--sign-up" id="inicio-sesion">
+            <div class="row">
+                <h2>Comienza a rentar hoy mismo</h2>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3"></div>
+                <div class="col span-1-of-3">
+                    <div class="cuenta-box">
+                        <div>
+                            <h3>Inicia sesión</h3>
+                            <p class="sesion-text"> <em>Si ya tienes cuenta, inicia sesión para poder rentar </em><br> &nbsp; </p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>Correo:<input type="email" name="correo" id="correo" placeholder="nombre@example.com" required></li>
+                                <li>Contraseña:<input type="password" name="pswd" id="pswd" placeholder="contraseña" required> </li>
+                                <li><input type="checkbox" name="recordar" id="recordar" > Recordar contraseña</li>
+                            </ul>
+                        </div>
+                        <div>
+
+
+                            <a href="#" class="btn btn-full" onclick="iniciaSesion()">Iniciar sesión</a>
+                            <br>
+                            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span>¿No tienes cuenta? ¡Regístrate ahora!</span></button>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- 
+                <div class="col span-2-of-3 info-cuentas">
+                    
+                    <h3><ion-icon name="key" class="icon-cuenta"></ion-icon>Cuenta de huésped</h3>
+                    <p>Si eres estudiante y quieres mudarte a la capital para hacer tu carrera, myhaus es la solución. ¡Crea tu cuenta ya!</p>
+                    <br>
+                    <ul>
+                        <li>Crea tu cuenta, o inicia sesión si ya estas registrado.</li>
+                        <li>Ve al navegador de "buscar hogar", ahí se presentan todas las viviendas que tenemos</li>
+                        <li>Filtra entre las opciones y encuentra tu hogar ideal en la gran ciudad</li>
+                    </ul>
+                    
+                    <h3><ion-icon name="home" class="icon-cuenta"></ion-icon>Cuenta de anfitrión</h3>
+                    <p>¿Tienes un espacio de sobra? Crea tu cuenta como anfitrión y ponlo en renta con nosotros</p>
+                    <br>
+                    <ul>
+                        <li>Crea tu cuenta, o inicia sesión si ya estas registrado. </li>
+                        <li>Ve a "Ofrecer hogar" y sigue los pasos para subir tu espacio a nuestra página</li>
+                        <li>Registra tu oferta y ¡listo! Ya está a disposición de los huéspedes</li>
+                    </ul>
+                </div>
+                Intro section-->
+
+                <div id="id01" class="modal">
+
+                    <form class="modal-content animate" action="/action_page.php">
+                        <div class="imgcontainer">
+                            <span onclick="salir()" class="close" title="Close Modal">&times;</span>
+                        <h3>Crea tu cuenta ahora</h3>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col span-1-of-2 info-cuentas">
+                                    <h3><ion-icon name="key" class="icon-cuenta"></ion-icon>Cuenta de huésped</h3>
+                                    <p><em>Si eres estudiante y quieres mudarte a la capital para hacer tu carrera, myhaus es la solución. ¡Crea tu cuenta ya!</em></p>
+                                    <br>
+                                    <ul>
+                                        <li>Crea tu cuenta, o inicia sesión si ya estas registrado.</li>
+                                        <li>Ve al navegador de "buscar hogar", ahí se presentan todas las viviendas que tenemos</li>
+                                        <li>Filtra entre las opciones y encuentra tu hogar ideal en la gran ciudad</li>
+                                    </ul>
+
+                                    <h3><ion-icon name="home" class="icon-cuenta"></ion-icon>Cuenta de anfitrión</h3>
+                                    <p><em>¿Tienes un espacio de sobra? Crea tu cuenta como anfitrión y ponlo en renta con nosotros</em></p>
+                                    <br>
+                                    <ul>
+                                        <li>Crea tu cuenta, o inicia sesión si ya estas registrado. </li>
+                                        <li>Ve a "Ofrecer hogar" y sigue los pasos para subir tu espacio a nuestra página</li>
+                                        <li>Registra tu oferta y ¡listo! Ya está a disposición de los huéspedes</li>
+                                    </ul>
+                                </div>
+                                <div class="col span-1-of-2 crea-cuenta">
+                                    <ul>
+                                        <li>Tipo de cuenta:
+                                            <br><select name="tipo-cuenta" id="tipo">
+                                                <option value="huesped" selected>Huésped</option>
+                                                <option value="anfitrion" >Anfitrión</option>
+                                                </select></li>
+                                        <li>Nombre de usuario:
+                                            <br><input type="text" name="nombre" id="nom" placeholder="Username" required></li>
+                                        <li>Correo:
+                                            <br><input type="email" name="correo" id="correo" placeholder="correo@example.com" required></li>
+                                        <li>Contraseña:
+                                            <br><input type="password" name="pswd" id="pswd" placeholder="Contraseña" required> </li>
+                                        <li>Confirmar contraseña:
+                                            <br><input type="password" name="confpswd" id="cpswd" placeholder="Contraseña" required> </li>
+                                        <li><input type="checkbox" name="recordar" id="recordar"> Acepto terminos y condiciones</li>
+                                    </ul>
+                                    <p id="cuenta-creada">¡Cuenta creada con éxito! Ahora inicia sesión con tu cuenta</p>
+                                    <button type="button" onclick="creaCuenta()" id="btn-crear">Crear cuenta</button>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="pop-footer" style="background-color:#e8e8e8">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('id01');
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                            document.getElementById("cuenta-creada").style.display = "none";
+                        }
+                    }
+
+                    function salir(){
+                        document.getElementById("cuenta-creada").style.display = "none";
+                        document.getElementById('id01').style.display='none';
+                    }
+
+                    function creaCuenta(){
+                        var tipo = document.getElementById("tipo").value;
+                        
+                        sessionStorage.setItem("tipoUsuario",tipo);
+                        alert("¡Cuenta creada con éxito! Ahora inicia sesión con tu nueva cuenta de " + tipo);
+
+                    }
+
+                    function iniciaSesion(){
+                        var usuario;
+                        var tbUser = document.getElementById("correo").value;
+                        
+                        document.getElementById("tipo-anfitrion1").style.display = "none";
+                        document.getElementById("tipo-anfitrion2").style.display = "none";
+                        document.getElementById("tipo-huesped2").style.display = "none";
+                        
+                        if(tbUser == 'huesped@itam.mx'){
+                            sessionStorage.setItem("tipoUsuario","huesped");
+                        }
+                        else{
+                            if(tbUser == 'anfitrion@itam.mx'){
+                                sessionStorage.setItem("tipoUsuario","anfitrion");
+                            }
+                        }
+                        
+                        usuario = sessionStorage.getItem("tipoUsuario");
+                        if(usuario == 'huesped'){
+                            document.getElementById("tipo-huesped1").style.display = "block";
+                            document.getElementById("tipo-huesped2").style.display = "block";
+                            document.getElementById("tipo-anfitrion1").style.display = "none";
+                            document.getElementById("tipo-anfitrion2").style.display = "none";
+                            document.getElementById("default").style.display = "none";
+                            document.getElementById("sesion").style.display = "block";
+                        }
+                        else{
+                            if(usuario == 'anfitrion' ){
+                                document.getElementById("tipo-anfitrion1").style.display = "block";
+                                document.getElementById("tipo-anfitrion2").style.display = "block";
+                                document.getElementById("tipo-huesped2").style.display = "none";
+                                document.getElementById("default").style.display = "none";
+                                document.getElementById("sesion").style.display = "block";
+
+                            }
+                        }
+                    }  
+                    
+                </script>
+            </div>
+        
+        </section>
+        
+        <footer>
+            <div class="row">
+                <div class=" col span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">IOS App</a></li>
+                        <li><a href="#">Android App</a></li>
+                    </ul>
+                </div>
+                <div class=" col span-1-of-2">
+                    <ul class="social-links">
+                        <li><a href="#"><ion-icon name="logo-facebook" class="facebook-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter" class="twitter-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-googleplus" class="googleplus-logo"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram" class="instagram-logo"></ion-icon></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    Copyright &copy; 2019 by myhaus. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    
+    
+        <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/script-home.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        
+        
+        <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
+        
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyDxj5n4LrbLCQe8rS8-emVvefwrgy2VxXM",
+            authDomain: "myhaus-itam.firebaseapp.com",
+            databaseURL: "https://myhaus-itam.firebaseio.com",
+            projectId: "myhaus-itam",
+            storageBucket: "myhaus-itam.appspot.com",
+            messagingSenderId: "912191210053",
+            appId: "1:912191210053:web:79f1f543cf4f0b00"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src="html/index.js"></script>
+     
+
+    
+    </body>
+
+
+
+
+</html>

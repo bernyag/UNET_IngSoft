@@ -1,0 +1,544 @@
+/* ---------------------------------------------------------------------*/
+/* BASIC SETUP */
+/* ---------------------------------------------------------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+   
+}
+
+ *:focus {outline: none;}
+
+html,
+body{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------------------*/
+/*  FUNCIONALIDAD SESSION */
+/* ---------------------------------------------------------------------*/
+
+#tipo-huesped{
+    display: none;
+}
+
+#tipo-anfitrion{
+    display: none;
+}
+#default,
+#sesion{
+    font-size: 50%;
+}
+#sesion{
+    display: none;
+}
+
+
+/* ---------------------------------------------------------------------*/
+/* GENERALES */
+/* ---------------------------------------------------------------------*/
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+    
+}
+
+section{
+    padding: 80px 0;
+}
+
+.box{
+    padding: 1%;
+}
+
+
+/* ------HEADINGS------*/
+h1,
+h2{
+    font-weight: 300;
+    text-transform: uppercase;
+    word-spacing: 4px;
+    
+}
+
+h1{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 200%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+
+}
+
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: #669999;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+    
+}
+
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+/* ------LINKS-----*/
+
+a:link,
+a:visited{
+    color: #555;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #669999;
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active{
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+
+
+/* ------BUTTONS-----*/
+.btn:link, 
+.btn:visited,
+button{
+    display: inline-block;
+    background-color: transparent;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    color: #fff;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+button{
+    background-color: #669999;
+    border: 1px solid #669999;
+    color: #fff;
+    margin-right: 16px;
+}
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #669999;
+    color: #669999;
+}
+
+.btn:hover,
+.btn:active{
+    background-color: #548181;
+}
+
+.btn-full:hover,
+.btn-full:active
+{
+    border: 1px solid #548181;
+    
+}
+.btn-ghost:hover,
+.btn-ghost:active{
+    border: 1px solid #548181;
+    color: #fff;
+}
+
+
+/* ------ICONS-----*/
+.icon-big{
+    font-size: 300%;
+    display: block;
+    color: #669999;
+    padding-bottom: 10px;
+}
+
+.icon-small{
+    font-size: 100%;
+    display: inline-block;
+    color: #555;
+    margin-right: 10px;
+}
+
+.icon-nav{
+    font-size: 200%;
+    display: block;
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------------------*/
+/* NAV-BAR */
+/* ---------------------------------------------------------------------*/
+
+/* Main navigation*/
+
+.logo-nav{
+    height: 70px;
+    width: auto;
+    vertical-align: middle;
+    padding-top: 10px;
+    float: left;
+    padding-bottom: 10px;
+}
+
+.main-nav{
+    list-style: none;
+    float: right;
+    margin-top: 55px;
+}
+
+
+
+.main-nav li{
+    display: inline-block;
+    margin-left: 45px;
+    font-weight: 400;
+}
+
+.main-nav li .icon-nav{ 
+    font-size: 350%; 
+    display: inline-block;
+}
+
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #fff;;
+}
+
+/*Mobile navigation*/
+.mobile-nav-icon{
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+    color: #fff;
+}
+
+.mobile-nav-icon ion-icon{
+    font-size: 200%;
+    color: #fff;
+}
+
+
+/*Sticky navigation*/
+.sticky{
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.5)),to(rgba(0, 0, 0, 0))), url(img/navfoto.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0)), url(img/navfoto.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: fixed;
+    padding: 7px 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #eaeaea;
+    z-index: 99999;
+}
+
+.sticky .main-nav{
+    margin: 12px 0;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited{
+    padding: 8px 0px;
+    color: #fff;
+}
+.sticky .main-nav .icon-nav{ color: #fff; }
+
+
+/* ---------------------------------------------------------------------*/
+/* FILTROS */
+/* ---------------------------------------------------------------------*/
+
+.casas{
+    color: #333;
+}
+
+.casas h2{
+    margin-top: 50px;
+}
+
+/* ----------SEARCH BAR-------------*/
+
+.casas .search-bar{
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 10px;
+    padding-bottom: 30px;
+}
+
+.contenido{
+    margin-top: 20px;
+}
+
+
+input[type=text]{
+    width: 35%;
+    padding: 10px ;
+}
+
+.btn-busca:link,
+.btn-busca:visited{
+    padding: 5px 10px;
+    font-size: 70%;
+    margin-left: 2%;
+}
+
+button{
+    padding: 5px 10px;
+    font-family: Lato, Arial;
+    font-size: 12px;
+}
+
+
+/* ----------FILTROS-------------*/
+
+
+
+.filtros-box{
+    background-color: rgba(102, 153, 153, 0.5);
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #548181;
+}
+
+.filtros-box h3{
+    text-align: center;
+    font-size: 150%;
+    font-weight: 300;
+    padding-top: 10px;
+}
+
+h4{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.filtros{
+    list-style: none;
+}
+
+.filtros li{
+    font-size: 80%;
+    padding:10px 10px;
+    border-bottom: 1px solid #548181;
+}
+
+.filtros li:last-child{
+    text-align: center;
+}
+
+.filtros li input,
+.filtros li span{
+    margin-left: 20px;
+    margin-bottom: 5px;
+    margin-right: 8px;
+}
+
+.filtros .servicios{ list-style: none; }
+.filtros .servicios li{ 
+    margin-left: -10px;
+    text-align: left;
+    border: 0;
+}
+
+/* The slider itself */
+.slider {
+  width: 50%; /* Full-width */
+  height: 5px; /* Specified height */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+
+
+/* ----------HOGARES-------------*/
+.hogares { 
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.hogar-box{
+    background-color: #e0e0e0;
+    margin-top: 10px;
+    border: 2px solid #9d9d9d;  
+    -webkit-transition: opacity 0.2s;  
+    transition: opacity 0.2s;
+    height: 420px;
+}
+
+
+.hogar-box:hover{
+    opacity: 0.7;
+}
+
+.hogar-box img{
+    height: 191px;
+    width: 100%;
+    margin: 0px;
+}
+
+
+.hogar-box .texto-hogar{
+    display:inline-block;
+    margin: 10px 10px 0 10px;
+    vertical-align: top;
+}
+
+.hogar-box .texto-hogar h3{
+    text-transform: uppercase;
+    font-size: 90%;
+    font-weight: 400;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+.hogar-box .texto-hogar p{
+    font-size: 80%;
+    line-height: 25px;
+}
+
+
+
+
+/* ---------------------------------------------------------------------*/
+/*  FOOTER */
+/* ---------------------------------------------------------------------*/
+
+footer{
+    background-color: #333;
+    padding: 50px;
+    font-size: 80%;
+}
+
+.footer-nav{
+    list-style: none;
+    float: left;
+}
+
+.social-links{
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li, 
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 160%;
+}
+
+.facebook-logo,
+.twitter-logo,
+.googleplus-logo,
+.instagram-logo{
+    -webkit-transition: color 0.4s;
+    transition: color 0.4s;
+}
+
+.facebook-logo:hover{
+    color: #3b5998;
+}
+
+.twitter-logo:hover{
+    color: #00aced;
+}
+
+.googleplus-logo:hover{
+    color: #dd4b39;
+}
+
+.instagram-logo:hover{
+    color: #a7178b;
+}
+
+footer p{
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
