@@ -33,70 +33,77 @@
         </header>
             
         <section>
-            <div class="row">
-                <h2>¡Organízate y sácale el máximo provecho a tus estudios!</h2>
-            </div>
-            <div class="row">
-                <div class="col span-1-of-2 inicia-sesion" >
-                    <div class="col span-1-of-1">
-                        <div class="cuenta-box">
-                            <div>
-                                <h3>Inicia sesión</h3>
-                                <p class="sesion-text"> <em>Si ya tienes cuenta, inicia sesión para poder rentar </em><br> &nbsp; </p>
-                            </div>
-                            <div>
-                                <ul>
-                                    <li>Correo:<input type="email" name="correo" id="correo" placeholder="nombre@example.com" required></li>
-                                    <li>Contraseña:<input type="password" name="pswd" id="pswd" placeholder="contraseña" required> </li>
-                                    <li><input type="checkbox" name="recordar" id="recordar" > Recordar contraseña</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <a href="#" class="btn btn-full">Iniciar sesión</a>
-                                <br>
-                                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span>¿No tienes cuenta? ¡Regístrate ahora!</span></button>
+            <div>
+                <div class="row" style="background-color: #6610f2; max-width: 100%; color:#fff">
+                    <h2>¡Organízate y sácale el máximo provecho a tus estudios!</h2>
+                </div>
+                <div class="row inicio-sesion">
+                    <div class="col span-1-of-2" >
+                        <div class="col span-1-of-1">
+                            <div class="cuenta-box">
+                                <div>
+                                    <h3>Inicia sesión</h3>
+                                    <p class="sesion-text"> <em>Si ya tienes cuenta, inicia sesión para ver tu calendario</em><br> &nbsp; </p>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>Correo:<input type="email" name="correo" id="correo" placeholder="nombre@example.com" required></li>
+                                        <li>Contraseña:<input type="password" name="pswd" id="pswd" placeholder="contraseña" required> </li>
+                                        <li><input type="checkbox" name="recordar" id="recordar" > Recordar contraseña</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="#" class="btn btn-full">Iniciar sesión</a>
+                                    <br>
+                                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span>¿No tienes cuenta? ¡Regístrate ahora!</span></button>
 
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <img src="imgs/hero-image.png" alt="Imagen" class="img-index">
+                    </div>
+
+
+                    <div id="id01" class="modal">
+
+                        <form class="modal-content animate" action="/action_page.php">
+                            <div class="imgcontainer">
+                                <span onclick="salir()" class="close" title="Close Modal">&times;</span>
+                            <h3>Crea tu cuenta ahora</h3>
+                            </div>
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="crea-cuenta">
+                                        <ul>
+                                            <li>Nombre de usuario:
+                                                <br><input type="text" name="nombre" id="nom" placeholder="Username" required></li>
+                                            <li>Correo:
+                                                <br><input type="email" name="correo" id="correo" placeholder="correo@example.com" required></li>
+                                            <li>Contraseña:
+                                                <br><input type="password" name="pswd" id="pswd" placeholder="Contraseña" required> </li>
+                                            <li>Confirmar contraseña:
+                                                <br><input type="password" name="confpswd" id="cpswd" placeholder="Contraseña" required> </li>
+                                            <li><input type="checkbox" name="recordar" id="recordar"> Acepto terminos y condiciones</li>
+                                        </ul>
+                                        <p id="cuenta-creada">¡Cuenta creada con éxito! Ahora inicia sesión con tu cuenta</p>
+                                        <button type="button" onclick="creaCuenta()" id="btn-crear">Crear cuenta</button>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="pop-footer" style="background-color:#e8e8e8">
+                                <button type="button" onclick="document.getElementById('id01').style.display='none';                     document.getElementById('cuenta-creada').style.display = 'none'" class="cancelbtn">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
-
-                <div id="id01" class="modal">
-
-                    <form class="modal-content animate" action="/action_page.php">
-                        <div class="imgcontainer">
-                            <span onclick="salir()" class="close" title="Close Modal">&times;</span>
-                        <h3>Crea tu cuenta ahora</h3>
-                        </div>
-
-                        <div class="container">
-                            <div class="row">
-                                <div class="crea-cuenta">
-                                    <ul>
-                                        <li>Nombre de usuario:
-                                            <br><input type="text" name="nombre" id="nom" placeholder="Username" required></li>
-                                        <li>Correo:
-                                            <br><input type="email" name="correo" id="correo" placeholder="correo@example.com" required></li>
-                                        <li>Contraseña:
-                                            <br><input type="password" name="pswd" id="pswd" placeholder="Contraseña" required> </li>
-                                        <li>Confirmar contraseña:
-                                            <br><input type="password" name="confpswd" id="cpswd" placeholder="Contraseña" required> </li>
-                                        <li><input type="checkbox" name="recordar" id="recordar"> Acepto terminos y condiciones</li>
-                                    </ul>
-                                    <p id="cuenta-creada">¡Cuenta creada con éxito! Ahora inicia sesión con tu cuenta</p>
-                                    <button type="button" onclick="creaCuenta()" id="btn-crear">Crear cuenta</button>
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="pop-footer" style="background-color:#e8e8e8">
-                            <button type="button" onclick="document.getElementById('id01').style.display='none';                     document.getElementById('cuenta-creada').style.display = 'none'" class="cancelbtn">
-                                Cancel
-                            </button>
-                        </div>
-                    </form>
-                </div>
+    
             </div>
+
         </section>
         
         <script>
@@ -149,7 +156,7 @@
             </div>
             <div class="row">
                 <p>
-                    Copyright &copy; 2019 by myhaus. All rights reserved.
+                    Copyright &copy; 2019 by Unet. All rights reserved.
                 </p>
             </div>
         </footer>

@@ -25,12 +25,11 @@ body{
 
 .row{
     max-width: 1140px;
-    margin: 0 auto;
-    
+    margin: 0 auto;    
 }
 
 section{
-    padding: 80px 0;
+    padding:80px 0 0 0;
 }
 
 .box{
@@ -272,8 +271,20 @@ input[type=submit]:active{
 /* ---------------------------------------------------------------------*/
 
 .inicio-sesion{
-    background-color: #6610f2;
+    max-width: 100%;
+    padding: 0 10%;
+    background: linear-gradient(20deg, #f7f7f7 50%, #6610f2 50%);
+}
+
+.img-index{
+    margin: 50px 0px 0px 30px;
+    height: 450px;
+    width: auto;
     
+}
+
+.inicio-sesion h2{
+    color: #fff;
 }
 
 .sesion-text{
@@ -291,12 +302,13 @@ input[type=submit]:active{
 }
 
 .cuenta-box{
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(235, 235, 235, 0.9);
     color: #555;
     border-radius: 5px;
     width: 90%;
     border: 1px solid #23dd6a;
     height: 520px;
+    margin-bottom: 30px;
 }
 
 .cuenta-box div{
