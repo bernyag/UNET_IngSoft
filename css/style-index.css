@@ -406,7 +406,7 @@ input[type=submit]:active{
 
 .crea-cuenta #recordar{
     margin-right: 10px;
-    font-size: ;
+    /* font-size: ; */
 }
 
 .container button{
@@ -420,7 +420,7 @@ input[type=submit]:active{
     text-align: center;
     margin-left: 10%;
 }
-  
+
 .icon-cuenta{
     font-size: 110%;
     margin-right: 10px;
