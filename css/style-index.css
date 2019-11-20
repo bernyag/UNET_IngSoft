@@ -390,7 +390,7 @@ header{
 
 .crea-cuenta #recordar{
     margin-right: 10px;
-    font-size: ;
+    /* font-size: ; */
 }
 
 .container button{
@@ -403,7 +403,7 @@ header{
     width: 80%;
     text-align: center;
     margin-left: 10%;
-  
+}
 .icon-cuenta{
     font-size: 110%;
     margin-right: 10px;
