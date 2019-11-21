@@ -373,13 +373,13 @@ input[type=submit]:active{
 
 /* Liga para abrir Pop-Up */
 
-.cuenta-box span{
+.cuenta-box .green-text{
     display: block;
     font-size: 100%;
     color: #23dd6a;
     margin-top: 20px;
 }
-.cuenta-box span:hover{
+.cuenta-box .green-text:hover{
    border-bottom: 1px solid;
     color: #23dd6a;
 }
@@ -657,6 +657,40 @@ footer p{
     margin-top: 20px;
 }
 
+
+/* ---------------------------------------------------------------------*/
+/*  PLAN
+/* ---------------------------------------------------------------------*/
+
+.cont{
+    display:block;
+    text-align: center;
+    margin: 1% 0 1% 1.6%;
+}
+.inside{
+    display: inline-block;
+}
+.justify{
+    text-align: justify;
+}
+.right{
+    text-align: right;
+    float: right;
+}
+.ddl{
+    width: 50%;
+    padding: 5px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    float: right;
+    margin-right: 1px;
+}
+.margin50{
+    margin: 0px 50px;
+}
+.results .ans{
+    display : none;
+}
 
 
 
