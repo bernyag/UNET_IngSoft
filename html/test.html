@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style-index.css">
+        <link rel="stylesheet" type="text/css" href="../css/Grid.css">
+        <link rel="stylesheet" type="text/css" href="../css/querries-home.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <link rel="icon" type="image/ico" href="html/img/logo-negro.png" />
+        
+        <title>UNET Planner</title>
+      
+    </head>
+    
+    <body onload="iniciaSesion()">
+        <header>
+            <nav class="sticky">
+                <div class="row">
+                    <img src="../imgs/logo-black.png" alt="Logo Unet" class="logo-header">
+                    <img src="../imgs/logo-black.png" alt="Logo Unet" class="logo-nav"> 
+                    
+                    <ul class="main-nav js--main-nav" id="default-nav">
+                       
+                        <li><a href="calendario.html" id="tipo-huesped1">Calendario</a></li>
+                        <li><a href="plan.html" id="tipo-huesped2">Plan de horarios</a></li>
+                        <li><a href="miCuenta.html" id="sesion"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi Cuenta</a></li>
+                        <li><a href="index.html" id="default"><ion-icon name="contact" class="icon-nav"></ion-icon>Iniciar Sesion</a></li>
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
+                </div>
+            </nav>
+        </header>
+            
+        <section>
+            <div>
+                <div class="row" style="background-color: #6610f2; max-width: 100%; color:#fff">
+                    <h2>Organiza tus horas de estudio</h2>
+                </div>
+                <div class="row">
+                    <div class="cont span-1-of-1" >
+                        <div class="span-1-of-1 cont">
+                            <div class="horas-box inside cont">
+                                <div>
+                                    <h3>Plan de horarios</h3>
+                                    <p class="sesion-text"> <em>Ingresa tus horas libres por <strong>día, semana o mes</strong> para que calculemos la manera más eficiente de distribuir tu tiempo de estudio.</em><br> &nbsp; </p>
+                                </div>
+                                <div class="justify margin50">
+                                    <ul>
+                                        <li>Horas libres por <strong>día</strong>:
+                                            <input class ="ddl"type="number" name="horas" id="numHoras" placeholder="Número de horas" required> 
+                                        </li>
+                                        <li>Total de horas de estudio: 
+                                                <select name="modo" class="ddl" id="resHoras">
+                                                    <option value="1">por día</option>
+                                                    <option value="5">por semana</option>
+                                                    <option value="20">por mes</option>
+                                                </select>
+                                        </li>
+                                        
+                                    </ul>
+
+                                </div>
+                                <div>
+                                        <p class="sesion-text"> <em>Cuentas con <strong id="totalHoras"> [ingresar horas]</strong> horas para estudiar <strong><span id = "tipo">por día</span></strong>.</em><br> &nbsp; </p>
+                                </div>
+                                <div>
+                                    <button type="button" class="but" onclick="mostrarTareas()" id="btn-plan">Calcular plan</button>
+                                </div>
+                                <div class="justify margin50" id="listaTareas">
+                                    T
+                                </div>    
+                            </div>
+                                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+        <footer>
+                <div class="row">
+                    <div class=" col span-1-of-2">
+                        <ul class="footer-nav">
+                            <li><a href="http://unetapp.com/" target="_blank" >About us</a></li>
+                            <li><a href="https://apps.apple.com/mx/app/unet/id1461708771" target="_blank">App Store</a></li>
+                            <li><a href="https://play.google.com/store/apps/details?id=com.unetapp" target="_blank">Play Store</a></li>
+                        </ul>
+                    </div>
+                    <div class=" col span-1-of-2">
+                        <ul class="social-links">
+                            <li><a href="https://www.facebook.com/unetapp" target="_blank"><ion-icon name="logo-facebook" class="facebook-logo"></ion-icon></a></li>
+                            <li><a href="#" target="_blank"><ion-icon name="logo-twitter" class="twitter-logo"></ion-icon></a></li>
+                            <li><a href="#" target="_blank"><ion-icon name="logo-googleplus" class="googleplus-logo"></ion-icon></a></li>
+                            <li><a href="https://www.instagram.com/unetapp/" target="_blank"><ion-icon name="logo-instagram" class="instagram-logo"></ion-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>
+                        Copyright &copy; 2019 by Unet. All rights reserved.
+                    </p>
+                </div>
+        </footer>
+        <script src="../js/test.js"></script>  
+    </body>
+</html>
