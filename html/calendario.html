@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/style-index.css">
+        <link rel="stylesheet" type="text/css" href="../css/style-calendario.css">
         <link rel="stylesheet" type="text/css" href="../css/Grid.css">
         <link rel="stylesheet" type="text/css" href="../css/querries-home.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
@@ -13,13 +13,11 @@
       
     </head>
     
-    <body onload="iniciaSesion()">
+    <body onload="hoy()">
         <header>
             <nav class="sticky">
                 <div class="row">
-                    <img src="../imgs/logo-black.png" alt="Logo Unet" class="logo-header">
-                    <img src="../imgs/logo-black.png" alt="Logo Unet" class="logo-nav"> 
-                    
+                    <a href="index.html"><img src="../imgs/logo-black.png" alt="Logo Unet" class="logo-nav"> </a>
                     <ul class="main-nav js--main-nav" id="default-nav">
                        
                         <li><a href="calendario.html" id="tipo-huesped1">Calendario</a></li>
@@ -33,74 +31,102 @@
         </header>
             
         <section>
-            <div>
-                <div class="row" style="background-color: #6610f2; max-width: 100%; color:#fff">
-                    <h2>¡Organízate y sácale el máximo provecho a tus estudios!</h2>
-                </div>
-                <div class="row inicio-sesion">
-                    <div class="col span-1-of-2" >
-                        <div class="col span-1-of-1">
-                            <div class="cuenta-box">
-                                <div>
-                                    <h3>Inicia sesión</h3>
-                                    <p class="sesion-text"> <em>Si ya tienes cuenta, inicia sesión para ver tu calendario</em><br> &nbsp; </p>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>Correo:<input type="email" name="correo" id="correo" placeholder="nombre@example.com" required></li>
-                                        <li>Contraseña:<input type="password" name="pswd" id="pswd" placeholder="contraseña" required> </li>
-                                        <li><input type="checkbox" name="recordar" id="recordar" > Recordar contraseña</li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-full">Iniciar sesión</a>
-                                    <br>
-                                    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span>¿No tienes cuenta? ¡Regístrate ahora!</span></button>
-
-                                </div>
-                            </div>
-                        </div>
+            <div class="row calendario">
+                <div class="leftCol col span-1-of-3">
+                    <div class="thisDay">
+                        <p id="hoy"></p>
                     </div>
                     <div>
-                        <img src="../imgs/hero-image.png" alt="Imagen" class="img-index">
-                    </div>
-                    <div id="id01" class="modal">
-
-                        <form class="modal-content animate" action="/action_page.php">
-                            <div class="imgcontainer">
-                                <span onclick="salir()" class="close" title="Close Modal">&times;</span>
-                            <h3>Crea tu cuenta ahora</h3>
-                            </div>
-
-                            <div class="container">
-                                <div class="row">
-                                    <div class="crea-cuenta">
-                                        <ul>
-                                            <li>Nombre de usuario:
-                                                <br><input type="text" name="nombre" id="nom" placeholder="Username" required></li>
-                                            <li>Correo:
-                                                <br><input type="email" name="correo" id="correo" placeholder="correo@example.com" required></li>
-                                            <li>Contraseña:
-                                                <br><input type="password" name="pswd" id="pswd" placeholder="Contraseña" required> </li>
-                                            <li>Confirmar contraseña:
-                                                <br><input type="password" name="confpswd" id="cpswd" placeholder="Contraseña" required> </li>
-                                            <li><input type="checkbox" name="recordar" id="recordar"> Acepto terminos y condiciones</li>
-                                        </ul>
-                                        <p id="cuenta-creada">¡Cuenta creada con éxito! Ahora inicia sesión con tu cuenta</p>
-                                        <button type="button" onclick="creaCuenta()" id="btn-crear">Crear cuenta</button>
-                                    </div>
-                                </div> 
-                            </div>
-                            <div class="pop-footer" style="background-color:#e8e8e8">
-                                <button type="button" onclick="document.getElementById('id01').style.display='none';                     document.getElementById('cuenta-creada').style.display = 'none'" class="cancelbtn">
-                                    Cancel
-                                </button>
-                            </div>
-                        </form>
+                        <ul class="listaTareas">
+                            <li style="text-align: right"><span id="lbAgregar">Agregar tarea</span><ion-icon class="btnAgregar" name="add-circle-outline"></ion-icon></li>
+                            <li id="t1">Tarea 1</li>
+                            <li id="t2">Tarea 1</li>
+                            <li id="t3">Tarea 1</li>
+                            <li id="t4">Tarea 1</li>
+                            <li id="t5">Tarea 1</li>
+                            <li id="t6">Tarea 1</li>
+                        </ul>
                     </div>
                 </div>
+                <div class="rightCol col span-2-of-3 ">
+                 <table>
+                      <caption>
+                          <ion-icon class="arrowLeft" name="arrow-dropleft"></ion-icon>
+                          <span id="month"></span> 
+                          <span id="year" style="padding-left: 50px"></span>
+                          <ion-icon class="arrowRight" name="arrow-dropright"></ion-icon>
+                     </caption>
+
+                      <col class="weekend">
+                      <col class="weekday" span="5">
+                      <col class="weekend">
+                      <thead>
+                        <tr>
+                          <th>Dom</th>
+                          <th>Lun</th>
+                          <th>Mar</th>
+                          <th>Mier</th>
+                          <th>Jue</th>
+                          <th>Vie</th>
+                          <th>Sab</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td id="1"><div class="day">1</div></td>
+                          <td id="2"><div class="day">2</div></td>
+                          <td id="3"><div class="day">3</div></td>
+                          <td id="4"><div class="day">4</div></td>
+                          <td id="5"><div class="day">5</div></td>
+                          <td id="6" class="tarea"><div class="day">6</div>
+                              <div class="notes"><ion-icon name="logo-ionic"></ion-icon></div></td>
+                          <td id="7"><div class="day">7</div></td>
+                        </tr>
+                        <tr>
+                          <td id="8"><div class="day">8</div></td>
+                          <td id="9"><div class="day">9</div></td>
+                          <td id="10"><div class="day">10</div></td>
+                          <td id="11"><div class="day">11</div></td>
+                          <td id="12"><div class="day">12</div></td>
+                          <td id="13"><div class="day">13</div></td>
+                          <td id="14"><div class="day">14</div></td>
+                        </tr>
+                        <tr>
+                          <td id="15"><div class="day">15</div></td>
+                          <td id="16"><div class="day">16</div></td>
+                          <td id="17"><div class="day">17</div></td>
+                          <td id="18"><div class="day">18</div></td>
+                          <td id="19"><div class="day">19</div></td>
+                          <td id="20"><div class="day">20</div></td>
+                          <td id="21"><div class="day">21</div></td>
+                        </tr>
+                        <tr>
+                          <td id="22"><div class="day">22</div></td>
+                          <td id="23"><div class="day">23</div></td>
+                          <td id="24"><div class="day">24</div></td>
+                          <td id="25"><div class="day">25</div></td>
+                          <td id="26"><div class="day">26</div></td>
+                          <td id="27"><div class="day">27</div></td>
+                          <td id="28"><div class="day">28</div></td>
+                        </tr>
+                        <tr>
+                          <td id="29"><div class="day">29</div></td>
+                          <td id="30" class="tarea"><div class="day">30</div>
+                              <div class="notes"><ion-icon name="logo-ionic"></ion-icon></div>
+                          </td>
+                          <td id="31"></td>
+                          <td id="32"></td>
+                          <td id="33"></td>
+                          <td id="34"></td>
+                          <td id="35"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
             </div>
+                 
         </section>  
+        
         <footer>
                 <div class="row">
                     <div class=" col span-1-of-2">
@@ -125,30 +151,24 @@
                     </p>
                 </div>
         </footer>
+        
         <script>
-            // Get the modal
-            var modal = document.getElementById('id01');
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                    document.getElementById("cuenta-creada").style.display = "none";
-                }
-            }
-
-            function salir(){
-                document.getElementById("cuenta-creada").style.display = "none";
-                document.getElementById('id01').style.display='none';
-            }
-
-            function creaCuenta(){
-                //var tipo = document.getElementById("tipo").value;
-                //sessionStorage.setItem("tipoUsuario",tipo);
-                //alert("¡Cuenta creada con éxito! Ahora inicia sesión con tu nueva cuenta de ");
-                document.getElementById("cuenta-creada").style.display = "block";
-
-            }              
+            function hoy(){
+                var fecha = new Date();
+                var dia = fecha.getDate();
+                var mes = fecha.getMonth();
+                var nomDia = fecha.getDay();
+                var ano = fecha.getFullYear();
+                
+                var diatxt = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+                var mestxt = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                
+                document.getElementById("hoy").innerHTML = diatxt[nomDia] + ", " + dia + " de " + mestxt[mes];
+                document.getElementById("month").innerHTML = mestxt[mes];
+                document.getElementById("year").innerHTML = ano;
+                
+                
+                }       
         </script>
     
         <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
@@ -159,20 +179,7 @@
         
         <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
         
-        <script>
-          // Your web app's Firebase configuration
-          var firebaseConfig = {
-            apiKey: "AIzaSyDxj5n4LrbLCQe8rS8-emVvefwrgy2VxXM",
-            authDomain: "myhaus-itam.firebaseapp.com",
-            databaseURL: "https://myhaus-itam.firebaseio.com",
-            projectId: "myhaus-itam",
-            storageBucket: "myhaus-itam.appspot.com",
-            messagingSenderId: "912191210053",
-            appId: "1:912191210053:web:79f1f543cf4f0b00"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
-        </script>
+        
         <script src="../js/index.js"></script>  
     </body>
 </html>

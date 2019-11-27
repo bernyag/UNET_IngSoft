@@ -282,8 +282,7 @@ input[type=submit]:active{
 .img-index{
     margin: 50px 0px 0px 30px;
     height: 450px;
-    width: auto;
-    
+    width: auto; 
 }
 
 .inicio-sesion h2{
@@ -394,11 +393,12 @@ input[type=submit]:active{
 }
 
 .container .crea-cuenta ul{
-    text-align: center;
     margin-top: 10px;
     list-style: none;
     border-bottom: 1px solid #23dd6a;
     width: 50%;
+    margin-left: 25%;
+    padding-bottom: 50px;
 }
 .container .crea-cuenta ul li{
     text-align: left;    
@@ -504,7 +504,7 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 90%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 .modal input[type=text],
