@@ -29,7 +29,7 @@ body{
 }
 
 section{
-    padding:80px 0 0 0;
+    padding:74px 0 0 0;
 }
 
 .box{
@@ -150,14 +150,14 @@ input[type=submit]:active{
 
 /* ------ICONS-----*/
 .icon-big{
-    font-size: 300%;
+    font-size: 100%;
     display: block;
     color: #23dd6a;
     padding-bottom: 10px;
 }
 
 .icon-nav{
-    font-size: 200%;
+    font-size: 50%;
     display: block;
     color: #000;
 }
@@ -264,302 +264,13 @@ input[type=submit]:active{
     padding: 8px 0px;
     color: #000;
 }
-.sticky .main-nav li .icon-nav{ color: #000; }
+.sticky .main-nav li .icon-nav{ 
+    color: #000;
+    font-size: 310%;
+}
 
 .sticky .logo-header{ display: none; }
 .sticky .logo-nav{display: block; }
-
-/* ---------------------------------------------------------------------*/
-/* SIGN UP / SIGN IN */
-/* ---------------------------------------------------------------------*/
-
-.inicio-sesion{
-    max-width: 100%;
-    padding: 0 10%;
-    background: linear-gradient(20deg, #f7f7f7 50%, #6610f2 50%);
-}
-
-.img-index{
-    margin: 50px 0px 0px 30px;
-    height: 450px;
-    width: auto; 
-}
-
-.inicio-sesion h2{
-    color: #fff;
-}
-
-.sesion-text{
-    font-size: 90%;
-}
-
-.cuenta-box ul{
-    list-style: none;
-}
-.cuenta-box ul li{
-    margin-bottom: 20px;
-}
-.cuenta-box li input{
-    margin-left: 10px;
-}
-
-.cuenta-box{
-    background-color: rgba(235, 235, 235, 0.9);
-    color: #555;
-    border-radius: 5px;
-    width: 90%;
-    border: 1px solid #23dd6a;
-    height: 520px;
-    margin-bottom: 30px;
-}
-
-.cuenta-box div{
-    padding: 15px;
-    border-bottom: 1px solid #e8e8e8;
-}
-
-.cuenta-box div:first-child{
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-.cuenta-box div:last-child{
-    text-align: center;
-    border: 0;
-}
-
-.cuenta-box input[type=text],
-.cuenta-box input[type=email],
-.cuenta-box input[type=password]{
-    width: 50%;
-    padding: 5px;
-    margin-right: 20px;
-    border: 1px solid #ccc;
-    float: right;
-    margin-right: 1px;
-    
-}
-
-.cuenta-box input[type=checkbox]{
-    margin-right: 10px;
-}
-
-
-.cuenta-box li{
-    font-size: 70%;
-    padding-bottom: 10px;
-}
-.cuenta-box ul li:last-child{
-    font-size: 60%;
-    padding-top: 30px;
-}
-
-.cuenta-box a{ margin-left: 20px; }
-
-
-/* ---------------------------------------------------------------------*/
-/*  Crear cuenta pop up */
-/* ---------------------------------------------------------------------*/
-
-/* Full-width input fields */
-.modal input[type=text], 
-.modal input[type=password],
-.modal input[type=email] {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Liga para abrir Pop-Up */
-
-.cuenta-box .green-text{
-    display: block;
-    font-size: 100%;
-    color: #23dd6a;
-    margin-top: 20px;
-}
-.cuenta-box .green-text:hover{
-   border-bottom: 1px solid;
-    color: #23dd6a;
-}
-
-/* Campos crear cuenta */
-.crea-cuenta{
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.container .crea-cuenta ul{
-    margin-top: 10px;
-    list-style: none;
-    border-bottom: 1px solid #23dd6a;
-    width: 50%;
-    margin-left: 25%;
-    padding-bottom: 50px;
-}
-.container .crea-cuenta ul li{
-    text-align: left;    
-    margin-left: 30px;
-    margin-top: 10px;
-    
-}
-
-.crea-cuenta #recordar{
-    margin-right: 10px;
-    /* font-size: ; */
-}
-
-.container button{
-    background-color: #23dd6a;
-    color: white;
-    padding: 14px 20px;
-    margin-top: 30px;
-    border: none;
-    cursor: pointer;
-    width: 80%;
-    text-align: center;
-    margin-left: 10%;
-}
-
-.icon-cuenta{
-    font-size: 110%;
-    margin-right: 10px;
-    color: #23dd6a;
-}
-
-.container .crea-cuenta p{
-    font-size: 90%;
-    font-weight: 300;
-    color: #555;
-    text-align: center;
-    padding: 10px 0;
-    display: none;
-}
-
-
-/* Set a style for all buttons */
- button{
-    font-size: 70%;
-    color: #23dd6a; 
-    margin-top: 20px;
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 100;
-}
-
-button:hover{
-    color: #000;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-    color: #fff;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-    width: 100px;
-    height: auto;
-    border-radius: 50%;
-}
-
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
-}
-
-.modal input[type=text],
-.modal input[type=email],
-.modal input[type=password]{
-    padding: 5px 10px;
-    width: 70%;
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-.cancelbtn{
-    margin-left: 90%;
-    margin-bottom: 10px;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
 
 
 /* ---------------------------------------------------------------------*/
@@ -574,6 +285,132 @@ span.psw {
     display: none;
 }
 
+/* ---------------------------------------------------------------------*/
+/*  DISEÑO CALENDARIO */
+/* ---------------------------------------------------------------------*/
+
+.calendario{
+    max-width: 100%;
+    padding: 0;
+    background-color: #dedede;
+    padding-left: 20px;
+}
+
+
+/*Diseño para la columna Izquierda */
+
+.leftCol{
+    background-color: #6610f2;
+    color: #fff;
+    height: 82vh;
+}
+
+.thisDay{
+    font-size:200%; 
+    padding-top: 10%;
+    text-align: center;
+    font-style: italic;
+}
+
+.listaTareas{
+    list-style: none;
+    margin-top: 20%;
+}
+
+#lbAgregar{
+    font-weight: 100;
+    font-size: 100%;
+    padding-right: 10%;
+    vertical-align: top;
+    cursor: default;
+    color: #fff;
+}
+
+.btnAgregar{
+    font-size: 150%;
+}
+.btnAgregar:hover{
+    cursor: pointer;
+    color: #23dd6a;
+}
+
+.listaTareas li{
+    padding: 8px 30px;
+}
+
+
+/*Diseño para el calnedrio */
+
+table {
+   margin-left: 10%;
+    margin-bottom: 2%;
+   border: 1px solid #000;
+   border-collapse: collapse;
+   }
+
+th {
+   border: 1px solid #000;
+   font-size: 70%;
+   text-transform: uppercase;
+    padding: 5px 0;
+}
+
+td {
+   border: 1px solid #000;
+   height: 90px;
+   width:90px;
+   padding: 5px;
+   vertical-align: top;
+}
+
+caption {
+   font-size: 250%;
+   font-style: italic;
+   text-align: center;
+   margin-bottom: 15px;
+}
+
+.arrowLeft{
+    vertical-align: bottom;
+    padding-right: 25px;
+    text-align: left;
+}
+.arrowRight{
+    vertical-align: bottom;
+    padding-left: 9%;
+    text-align: right;
+}
+.arrowLeft:hover,
+.arrowRight:hover{
+    cursor: pointer;
+    font-size: 108%;
+    transition: 0.2s;
+}
+
+.year{
+    text-align: right;
+    margin-left: 10%;
+}
+.day {
+    color: #000;
+   text-align: right;
+}
+
+.notes {
+    font-size: 90%;
+    text-align: center;
+    vertical-align: bottom;
+    color: #23dd6a;
+    padding-top: 30px;
+}
+
+.tarea {
+    
+}
+
+.weekend {
+   background-color: #eee;
+}
 
 
 
@@ -658,9 +495,3 @@ footer p{
     text-align: center;
     margin-top: 20px;
 }
-
-
-
-
-
-
