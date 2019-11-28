@@ -79,7 +79,13 @@
         background-color: #23dd6a;
         margin-top: 0;
 }
+.listaTarea{
+    background-color: rgba(102, 16, 242, .4);
+    color:black;
+    margin: 15px;
+    padding: 30px
 
+}
 
 
 
