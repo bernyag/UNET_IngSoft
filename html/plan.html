@@ -72,8 +72,8 @@
                                     <h3>Plan <span id="tipo2"></span></h3>
                                     <p class="sesion-text"> <em>Recomendamos darle esta prioridad y cantidad de horas a tus tareas para mejorar tu estudio</em><br> &nbsp; </p>
                                 </div>
-                                <div class="justify margin50">
-                                    <ul>
+                                <div class="justify margin50" id ="lista">
+                                    <!-- <ul id = "tarea 1">
                                         <li><strong>Nombre:</strong>
                                             <span class ="tareas" id="nom1" > </span>
                                         </li>
@@ -83,13 +83,10 @@
                                         <li><strong>Tiempo sugerido:</strong>
                                             <strong><span class ="tareas" id="hrs1" ></span></strong>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                                 <div>
-                                    <button type="button" class="but" onclick="mostrarTareas()" id="btn-plan">Calcular plan</button>
-                                </div>
-                                <div class="justify margin50" id="listaTareas">
-                                        
+                                    <button type="button" class="but" onclick="insertarCodigo()" id="btn-plan">Calcular plan</button>
                                 </div>
                             </div>
                             
@@ -171,7 +168,6 @@
                 }
 
                 
-
                 var t1 = {nombre:"Proyecto I.S", materia:"Ingeniería de Software", dificultad:9, prioridad: 9, entrega: "30/11/2019"};
                 var t2 = {nombre:"Proyecto Conta", materia:"Contabilidad I", dificultad:6, prioridad: 6, entrega: "28/11/2019"};
                 var t3 = {nombre:"Examen A.S.2", materia:"Álgebra Superior II", dificultad:10, prioridad: 7, entrega: "02/12/2019"};
@@ -180,7 +176,17 @@
 
                 for (let i=0; i<tareas.length; i+=1) {
                     sumaDificultad += tareas[i].dificultad;
-                }            
+                }  
+
+                function insertarCodigo(){
+                    var h = document.getElementById("lista");
+                    for (let i=0; i<tareas.length; i+=1) {
+                        h.insertAdjacentHTML("beforeend",'<ul class = "listaTarea" id = "tarea '+i+'"><li><strong>Nombre:</strong><span class ="tareas" id="nom'+i+'" > </span></li>' +
+                        '<li><strong>Materia:</strong><span class ="tareas" id="mat'+i+'" ></span></li><li><strong>Tiempo sugerido:</strong>' +
+                        '<strong><span class ="tareas" id="hrs'+i+'" ></span></strong></li></ul>');
+                    }      
+                    mostrarTareas();
+                }       
                 function mostrarTareas(){
                     var totalHoras = 0;
                     var formaCalcular = 1;
@@ -193,14 +199,16 @@
                     var text = eRes.options[eRes.selectedIndex].text;
                     totalHoras = formaCalcular * numHoras;
 
-
-                    document.getElementById("nom1").innerHTML = tareas[0]["nombre"];
-                    document.getElementById("mat1").innerHTML = tareas[0]["materia"];
-                    var proporcion = Math.round(tareas[0]["dificultad"]/sumaDificultad*totalHoras *100) / 100 ;
-                    var entero = Math.floor(proporcion);
-                    var decimal = Math.round((proporcion - entero) * 60);
-                    document.getElementById("hrs1").innerHTML = Math.round(tareas[0]["dificultad"]/sumaDificultad *100) +"% = "+entero+" horas "+decimal+" minutos";
+                    for (let i=0; i<tareas.length; i+=1) {
+                        document.getElementById("nom"+i).innerHTML = tareas[i]["nombre"];
+                        document.getElementById("mat"+i).innerHTML = tareas[i]["materia"];
+                        var proporcion = Math.round(tareas[i]["dificultad"]/sumaDificultad*totalHoras *100) / 100 ;
+                        var entero = Math.floor(proporcion);
+                        var decimal = Math.round((proporcion - entero) * 60);
+                        document.getElementById("hrs"+i).innerHTML = Math.round(tareas[i]["dificultad"]/sumaDificultad *100) +"% = "+entero+" horas "+decimal+" minutos";
+                    }
                 }
+                
                 
     
             </script> 
