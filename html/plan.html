@@ -12,7 +12,6 @@
         
         <title>UNET Planner</title>
     </head>
-    
     <body onload="iniciaSesion()">
         <header>
             <nav class="sticky">
@@ -128,10 +127,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/script-home.js"></script>
         <script src="js/jquery.waypoints.min.js"></script>
-        
-        
         <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
-
         <script >
                 // Script para cambiar la opción seleccionada del tipo de horario
                 
@@ -157,7 +153,6 @@
                         document.getElementById("totalHoras").innerHTML =  totalHoras;
                         mostrarTareas();
                     }
-        
                 }
                 var action = 1;
 
@@ -177,16 +172,15 @@
 
                 
 
-                var t1 = {nombre:"Proyecto I.S", materia:"Ingeniería de Software", dificultad:9, prioridad: 9};
-                var t2 = {nombre:"Proyecto Conta", materia:"Contabilidad I", dificultad:6, prioridad: 6};
-                var t3 = {nombre:"Examen A.S.2", materia:"Álgebra Superior II", dificultad:10, prioridad: 7};
+                var t1 = {nombre:"Proyecto I.S", materia:"Ingeniería de Software", dificultad:9, prioridad: 9, entrega: "30/11/2019"};
+                var t2 = {nombre:"Proyecto Conta", materia:"Contabilidad I", dificultad:6, prioridad: 6, entrega: "28/11/2019"};
+                var t3 = {nombre:"Examen A.S.2", materia:"Álgebra Superior II", dificultad:10, prioridad: 7, entrega: "02/12/2019"};
                 var tareas = [t1,t2,t3];
                 var sumaDificultad = 0;
 
                 for (let i=0; i<tareas.length; i+=1) {
                     sumaDificultad += tareas[i].dificultad;
                 }            
-                var proporcion = totalHoras;
                 function mostrarTareas(){
                     var totalHoras = 0;
                     var formaCalcular = 1;
@@ -202,7 +196,10 @@
 
                     document.getElementById("nom1").innerHTML = tareas[0]["nombre"];
                     document.getElementById("mat1").innerHTML = tareas[0]["materia"];
-                    document.getElementById("hrs1").innerHTML = Math.round(tareas[0]["dificultad"]/sumaDificultad *100) +"% = "+ Math.round(tareas[0]["dificultad"]/sumaDificultad*totalHoras *100) / 100 +" horas";
+                    var proporcion = Math.round(tareas[0]["dificultad"]/sumaDificultad*totalHoras *100) / 100 ;
+                    var entero = Math.floor(proporcion);
+                    var decimal = Math.round((proporcion - entero) * 60);
+                    document.getElementById("hrs1").innerHTML = Math.round(tareas[0]["dificultad"]/sumaDificultad *100) +"% = "+entero+" horas "+decimal+" minutos";
                 }
                 
     
