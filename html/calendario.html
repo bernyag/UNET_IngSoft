@@ -31,6 +31,10 @@
         </header>
             
         <section>
+            
+<!-- ---------------------------------------------------------- -->
+<!-- COLUMNA IZQUIERDA. DESPLIEGUE DE TAREAS -->
+<!-- ---------------------------------------------------------- -->
             <div class="row calendario">
                 <div class="leftCol col span-1-of-3">
                     <div class="thisDay">
@@ -38,7 +42,7 @@
                     </div>
                     <div>
                         <ul class="listaTareas">
-                            <li style="text-align: right"><span id="lbAgregar">Agregar tarea</span><ion-icon class="btnAgregar" name="add-circle-outline"></ion-icon></li>
+                            <li style="text-align: right" onclick="document.getElementById('id01').style.display='block'" ><span id="lbAgregar">Agregar tarea</span><ion-icon class="btnAgregar" name="add-circle-outline"></ion-icon></li>
                             <li id="t1">Tarea 1</li>
                             <li id="t2">Tarea 1</li>
                             <li id="t3">Tarea 1</li>
@@ -48,13 +52,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="rightCol col span-2-of-3 ">
+<!-- ---------------------------------------------------------- -->
+<!-- CALENDARIO -->
+<!-- ---------------------------------------------------------- -->
+                
+                <div class='rightCol col span-2-of-3 '>
                  <table>
                       <caption>
-                          <ion-icon class="arrowLeft" name="arrow-dropleft"></ion-icon>
+                          <span onclick="prevMonth()"><ion-icon class="arrowLeft" name="arrow-dropleft"></ion-icon></span>
                           <span id="month"></span> 
                           <span id="year" style="padding-left: 50px"></span>
-                          <ion-icon class="arrowRight" name="arrow-dropright"></ion-icon>
+                          <span onclick="nextMonth()"><ion-icon class="arrowRight" name="arrow-dropright"></ion-icon></span>
                      </caption>
 
                       <col class="weekend">
@@ -73,59 +81,116 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td id="1"><div class="day">1</div></td>
-                          <td id="2"><div class="day">2</div></td>
-                          <td id="3"><div class="day">3</div></td>
-                          <td id="4"><div class="day">4</div></td>
-                          <td id="5"><div class="day">5</div></td>
-                          <td id="6" class="tarea"><div class="day">6</div>
+                          <td id="0" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="1" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="2" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="3" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="4" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="5" onclick="selectDay(this.id)"><div class="day"></div>
                               <div class="notes"><ion-icon name="logo-ionic"></ion-icon></div></td>
-                          <td id="7"><div class="day">7</div></td>
+                          <td id="6" onclick="selectDay(this.id)"><div class="day"></div></td>
                         </tr>
                         <tr>
-                          <td id="8"><div class="day">8</div></td>
-                          <td id="9"><div class="day">9</div></td>
-                          <td id="10"><div class="day">10</div></td>
-                          <td id="11"><div class="day">11</div></td>
-                          <td id="12"><div class="day">12</div></td>
-                          <td id="13"><div class="day">13</div></td>
-                          <td id="14"><div class="day">14</div></td>
+                          <td id="7" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="8" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="9" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="10" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="11" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="12" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="13" onclick="selectDay(this.id)"><div class="day"></div></td>
                         </tr>
                         <tr>
-                          <td id="15"><div class="day">15</div></td>
-                          <td id="16"><div class="day">16</div></td>
-                          <td id="17"><div class="day">17</div></td>
-                          <td id="18"><div class="day">18</div></td>
-                          <td id="19"><div class="day">19</div></td>
-                          <td id="20"><div class="day">20</div></td>
-                          <td id="21"><div class="day">21</div></td>
+                          <td id="14" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="15" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="16" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="17" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="18" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="19" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="20" onclick="selectDay(this.id)"><div class="day"></div></td>
                         </tr>
                         <tr>
-                          <td id="22"><div class="day">22</div></td>
-                          <td id="23"><div class="day">23</div></td>
-                          <td id="24"><div class="day">24</div></td>
-                          <td id="25"><div class="day">25</div></td>
-                          <td id="26"><div class="day">26</div></td>
-                          <td id="27"><div class="day">27</div></td>
-                          <td id="28"><div class="day">28</div></td>
+                          <td id="21" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="22" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="23" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="24" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="25" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="26" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="27" onclick="selectDay(this.id)"><div class="day"></div></td>
                         </tr>
                         <tr>
-                          <td id="29"><div class="day">29</div></td>
-                          <td id="30" class="tarea"><div class="day">30</div>
+                          <td id="28" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="29" onclick="selectDay(this.id)"><div class="day"></div>
                               <div class="notes"><ion-icon name="logo-ionic"></ion-icon></div>
                           </td>
-                          <td id="31"></td>
-                          <td id="32"></td>
-                          <td id="33"></td>
-                          <td id="34"></td>
-                          <td id="35"></td>
+                          <td id="30" onclick="selectDay(this.id)"></td>
+                          <td id="31" onclick="selectDay(this.id)"></td>
+                          <td id="32" onclick="selectDay(this.id)"></td>
+                          <td id="33" onclick="selectDay(this.id)"></td>
+                          <td id="34" onclick="selectDay(this.id)"></td>
                         </tr>
                       </tbody>
                     </table>
                 </div>
+                
+<!-- ---------------------------------------------------------- -->
+<!-- POP-UP AGREGAR TAREAS -->
+<!-- ---------------------------------------------------------- -->
+                
+                <div id="id01" class="modal">
+                    <form class="modal-content animate" action="/action_page.php">
+                        <div class="imgcontainer">
+                            <span onclick="salir()" class="close" title="Close Modal">&times;</span>
+                        <h3>Agrega una tarea</h3>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="agrega-tarea">
+                                    <ul>
+                                        <li>Tarea:
+                                            <input type="text" name="tarea" id="tar" placeholder="Nombre de tarea" required>
+                                        </li>
+                                        <li>Materia:
+                                            <input type="text" name="materia" id="mat" placeholder="Materia" required>
+                                        </li>
+                                        <li>Dificultad:
+                                            <select name="dificultad" id="dif">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                        </li>
+                                        <li>Prioridad:
+                                            <select name="prioridad" id="prio">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                            </select>
+                                        </li>
+                                    </ul>
+                                    <button type="button" onclick="creaCuenta()" id="btn-crear">Crear cuenta</button>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="pop-footer" style="background-color:#e8e8e8">
+                            <button type="button" onclick="salir()" class="cancelbtn">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
             </div>
                  
         </section>  
+        
+<!-- ---------------------------------------------------------- -->
+<!-- FOOTER -->
+<!-- ---------------------------------------------------------- -->
         
         <footer>
                 <div class="row">
@@ -152,23 +217,137 @@
                 </div>
         </footer>
         
+<!-- ---------------------------------------------------------- -->
+<!-- JAVASCRIPT -->
+<!-- ---------------------------------------------------------- -->
         <script>
+            //Variables globales
+            var posiciones = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+            var diatxt = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            var mestxt = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+            
+            var selected = 0;
+            var dia = 0;
+            var mes = 0;
+            var ano = 0;
+            
+            // Pop-up Agregar tarea
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    salir();
+                }
+            }
+              
+            
+            function salir(){
+                
+                modal.style.display = "none";
+                document.getElementById("tar").value = "";
+                document.getElementById("mat").value = "";
+                document.getElementById("dif").value = "1";
+                document.getElementById("prio").value = "1"; 
+            }
+            
+            function llenaDias(month, year){
+                var d = month + "/1" + "/" + year;
+                var date = new Date(d);
+                var weekDay = date.getDay();
+                var ind = weekDay; 
+                
+                for(i = 0; i<30; i++){
+                    document.getElementById(ind).innerHTML = "<div class='day'>"+(i+1)+"</div>";
+                    posiciones[ind]=i+1;
+                    ind = ind +1;
+                }
+            }
+            
             function hoy(){
                 var fecha = new Date();
-                var dia = fecha.getDate();
-                var mes = fecha.getMonth();
-                var nomDia = fecha.getDay();
-                var ano = fecha.getFullYear();
+                dia = fecha.getDate();
+                mes = fecha.getMonth();
+                ano = fecha.getFullYear();
                 
-                var diatxt = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-                var mestxt = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                llenaDias(mes+1, ano);
+                fechaTxt(dia, mes+1, ano);
+                //alert(dia +"/"+mes+"/"+ano);
                 
-                document.getElementById("hoy").innerHTML = diatxt[nomDia] + ", " + dia + " de " + mestxt[mes];
-                document.getElementById("month").innerHTML = mestxt[mes];
-                document.getElementById("year").innerHTML = ano;
+                var i = 0;
+                while(posiciones[i]!=dia){
+                    i++;
+                }
+                document.getElementById(i).classList.add("today");
+                selected = i;
                 
                 
-                }       
+                }  
+            
+            function selectDay(id){
+                document.getElementById(selected).classList.remove("today");
+                document.getElementById(id).classList.add("today");
+                selected = id;
+                dia = posiciones[id];
+                //alert(dia);
+                
+                fechaTxt(dia, mes+1, ano);
+                
+            }
+            
+            function fechaTxt(s_day, s_month, s_year){  
+                if (s_day!=-1){
+                    var d = s_month + "/" + s_day + "/" + s_year;
+                    var fecha = new Date(d);
+                    var nomDia = fecha.getDay();
+                    dia = fecha.getDate();
+                    mes = fecha.getMonth();
+                    ano = fecha.getFullYear();
+
+                    document.getElementById("hoy").innerHTML = diatxt[nomDia] + ", " + dia + " de " + mestxt[mes];
+                    document.getElementById("month").innerHTML = mestxt[mes];
+                    document.getElementById("year").innerHTML = ano;
+                }
+            }
+            
+            function nextMonth(){
+                for(var i=0; i<35; i++){
+                    posiciones[i]=-1;
+                    document.getElementById(i).innerHTML = " ";
+                }
+                mes = mes+1;
+                llenaDias(mes+1, ano);
+                fechaTxt(1,mes+1, ano);
+                
+                var j = 0;
+                dia = 1;
+                while(posiciones[j]!=dia){
+                    j++;
+                }
+                document.getElementById(selected).classList.remove("today");
+                document.getElementById(j).classList.add("today");
+                selected = j;
+            }
+            
+            function prevMonth(){
+                for(var i=0; i<35; i++){
+                    posiciones[i]=-1;
+                    document.getElementById(i).innerHTML = " ";
+                }
+                mes = mes-1;
+                llenaDias(mes+1, ano);
+                fechaTxt(1,mes+1, ano);
+                
+                var j = 0;
+                dia = 1;
+                while(posiciones[j]!=dia){
+                    j++;
+                }
+                document.getElementById(selected).classList.remove("today");
+                document.getElementById(j).classList.add("today");
+                selected = j;
+            }
+            
         </script>
     
         <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
