@@ -393,7 +393,7 @@ caption {
 }
 .day {
     color: #000;
-   text-align: right;
+    text-align: right;
 }
 
 .notes {
@@ -404,12 +404,191 @@ caption {
     padding-top: 30px;
 }
 
-.tarea {
-    
+.today{
+   background-color: rgba(102, 16, 242, 0.3);    
 }
 
 .weekend {
    background-color: #eee;
+}
+
+
+/* ---------------------------------------------------------------------*/
+/*  Crear cuenta pop up */
+/* ---------------------------------------------------------------------*/
+
+/* Full-width input fields */
+.modal input[type=text]{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Campos agregar tarea */
+.agrega-tarea{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.container .agrega-tarea ul{
+    margin-top: 10px;
+    list-style: none;
+    border-bottom: 1px solid #23dd6a;
+    width: 50%;
+    margin-left: 25%;
+    padding-bottom: 50px;
+}
+.container .agrega-tarea ul li{
+    text-align: left;    
+    margin-left: 30px;
+    margin-top: 10px;
+    
+}
+
+.agrega-tarea #recordar{
+    margin-right: 10px;
+    /* font-size: ; */
+}
+
+.container button{
+    background-color: #23dd6a;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+}
+
+.icon-cuenta{
+    font-size: 110%;
+    margin-right: 10px;
+    color: #23dd6a;
+}
+
+
+
+/* Set a style for all buttons */
+ button{
+    font-size: 70%;
+    color: #23dd6a; 
+    margin-top: 20px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 100;
+    outline: none;
+}
+
+button:hover{
+    color: #000;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+    color: #fff;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  width: 100%; /* Full width */
+  height: auto; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.modal input[type=text],
+.modal input[type=email],
+.modal input[type=password]{
+    padding: 5px 10px;
+    width: 100%;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.cancelbtn{
+    margin-left: 90%;
+    margin-bottom: 10px;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
 }
 
 
