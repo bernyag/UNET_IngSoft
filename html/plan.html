@@ -171,21 +171,37 @@
                 var t1 = {nombre:"Proyecto I.S", materia:"Ingeniería de Software", dificultad:9, prioridad: 9, entrega: "30/11/2019"};
                 var t2 = {nombre:"Proyecto Conta", materia:"Contabilidad I", dificultad:6, prioridad: 6, entrega: "28/11/2019"};
                 var t3 = {nombre:"Examen A.S.2", materia:"Álgebra Superior II", dificultad:10, prioridad: 7, entrega: "02/12/2019"};
-                var tareas = [t1,t2,t3];
+                var t4 = {nombre:"Ensayo", materia:"Redacción", dificultad:9, prioridad: 9, entrega: "30/11/2019"};
+                var t5 = {nombre:"Parcial", materia:"Cálculo III", dificultad:6, prioridad: 6, entrega: "28/11/2019"};
+                var t6 = {nombre:"Hoja de trabajo", materia:"Álgebra Superior II", dificultad:10, prioridad: 7, entrega: "02/12/2019"};
+                var tareas = [t1,t2,t3,t4,t5,t6];
                 var sumaDificultad = 0;
 
                 for (let i=0; i<tareas.length; i+=1) {
                     sumaDificultad += tareas[i].dificultad;
-                }  
-
+                }     
                 function insertarCodigo(){
+                    var eRes = +document.getElementById("resHoras").value;
+                    var max = 1;
+                    switch(eRes){
+                        case 1: max = 2;
+                        break;
+                        case 5: max = 4;
+                        break;
+                        case 20: max = tareas.length;
+                        break;
+                        default: max = 1;
+                    } 
                     var h = document.getElementById("lista");
-                    for (let i=0; i<tareas.length; i+=1) {
+                    // ver cuantos son
+                    h. insertAdjacentHTML("beforeend", '<span>'+eRes+'</span>');
+                    for (let i=0; i<max; i+=1) {
                         h.insertAdjacentHTML("beforeend",'<ul class = "listaTarea" id = "tarea '+i+'"><li><strong>Nombre:</strong><span class ="tareas" id="nom'+i+'" > </span></li>' +
                         '<li><strong>Materia:</strong><span class ="tareas" id="mat'+i+'" ></span></li><li><strong>Tiempo sugerido:</strong>' +
                         '<strong><span class ="tareas" id="hrs'+i+'" ></span></strong></li></ul>');
                     }      
                     mostrarTareas();
+
                 }       
                 function mostrarTareas(){
                     var totalHoras = 0;
@@ -207,6 +223,7 @@
                         var decimal = Math.round((proporcion - entero) * 60);
                         document.getElementById("hrs"+i).innerHTML = Math.round(tareas[i]["dificultad"]/sumaDificultad *100) +"% = "+entero+" horas "+decimal+" minutos";
                     }
+                    
                 }
                 
                 

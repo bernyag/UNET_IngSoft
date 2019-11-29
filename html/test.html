@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../css/style-index.css">
         <link rel="stylesheet" type="text/css" href="../css/Grid.css">
+        <link rel="stylesheet" type="text/css" href="../css/style-plan.css">
         <link rel="stylesheet" type="text/css" href="../css/querries-home.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
         <link rel="icon" type="image/ico" href="html/img/logo-negro.png" />
@@ -38,43 +39,58 @@
                     <h2>Organiza tus horas de estudio</h2>
                 </div>
                 <div class="row">
-                    <div class="cont span-1-of-1" >
-                        <div class="span-1-of-1 cont">
-                            <div class="horas-box inside cont">
-                                <div>
-                                    <h3>Plan de horarios</h3>
-                                    <p class="sesion-text"> <em>Ingresa tus horas libres por <strong>día, semana o mes</strong> para que calculemos la manera más eficiente de distribuir tu tiempo de estudio.</em><br> &nbsp; </p>
+                        <div class="cont span-1-of-1" >
+                            <div class="span-1-of-1 cont">
+                                <div class="horas-box inside cont">
+                                    <div>
+                                        <h3>Plan de horarios</h3>
+                                        <p class="sesion-text"> <em>Ingresa tus horas libres por <strong>día, semana o mes</strong> para que calculemos la manera más eficiente de distribuir tu tiempo de estudio.</em><br> &nbsp; </p>
+                                    </div>
+                                    <div class="justify margin50">
+                                        <ul>
+                                            <li>Horas libres por <strong>día</strong>:
+                                                <input class ="ddl"type="number" name="horas" id="numHoras" placeholder="Número de horas" required> 
+                                            </li>
+                                            <li>Total de horas de estudio: 
+                                                    <select name="modo" class="ddl" id="resHoras">
+                                                        <option value="1">por día</option>
+                                                        <option value="5">por semana</option>
+                                                        <option value="20">por mes</option>
+                                                    </select>
+                                            </li>
+                                            
+                                        </ul>
+    
+                                    </div>
+                                    <div>
+                                            <p class="sesion-text"> <em>Cuentas con <strong id="totalHoras"> [ingresar horas]</strong> horas para estudiar <strong><span id = "tipo">por día</span></strong>.</em><br> &nbsp; </p>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="but" onclick="calcularPlan()" id="btn-plan">Calcular plan</button>
+                                    </div>
                                 </div>
-                                <div class="justify margin50">
-                                    <ul>
-                                        <li>Horas libres por <strong>día</strong>:
-                                            <input class ="ddl"type="number" name="horas" id="numHoras" placeholder="Número de horas" required> 
-                                        </li>
-                                        <li>Total de horas de estudio: 
-                                                <select name="modo" class="ddl" id="resHoras">
-                                                    <option value="1">por día</option>
-                                                    <option value="5">por semana</option>
-                                                    <option value="20">por mes</option>
-                                                </select>
-                                        </li>
-                                        
-                                    </ul>
-
+                                <div class="horas-box inside cont" id="tareas">
+                                    <div>
+                                        <h3>Plan <span id="tipo2"></span></h3>
+                                        <p class="sesion-text"> <em>Recomendamos darle esta prioridad y cantidad de horas a tus tareas para mejorar tu estudio</em><br> &nbsp; </p>
+                                    </div>
+                                    <div class="justify margin50" id ="lista">
+                                            <ul class = "listaTarea" id = "tarea '+i+'">
+                                                <li><strong>Nombre:</strong><span class ="tareas" id="nom'+i+'" > N</span></li>
+                                                <li><strong>Materia:</strong><span class ="tareas" id="mat'+i+'" >M</span></li>
+                                                
+                                                <li><strong>Tiempo sugerido:</strong>
+                                                <strong><span class ="tareas" id="hrs'+i+'" > 10</span></strong></li>
+                                                
+                                            </ul>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="but" onclick="insertarCodigo()" id="btn-plan">Calcular plan</button>
+                                    </div>
                                 </div>
-                                <div>
-                                        <p class="sesion-text"> <em>Cuentas con <strong id="totalHoras"> [ingresar horas]</strong> horas para estudiar <strong><span id = "tipo">por día</span></strong>.</em><br> &nbsp; </p>
-                                </div>
-                                <div>
-                                    <button type="button" class="but" onclick="mostrarTareas()" id="btn-plan">Calcular plan</button>
-                                </div>
-                                <div class="justify margin50" id="listaTareas">
-                                    T
-                                </div>    
+                                
                             </div>
-                                                    
                         </div>
-                    </div>
-                </div>
             </div>
         </section>  
         <footer>
@@ -101,6 +117,95 @@
                     </p>
                 </div>
         </footer>
-        <script src="../js/test.js"></script>  
+        <script src="../js/test.js"></script> 
+        <script >
+                // Script para cambiar la opción seleccionada del tipo de horario
+                
+                window.onload=function() { // when the page has loaded
+                    var totalHoras = 0;
+                    var valueTipo = 1;
+                    document.getElementById("resHoras").onchange=function() {
+                        var numHoras = parseFloat(document.getElementById("numHoras").value);
+                        valueTipo = parseFloat(this.value);
+                        var text = this.options[this.selectedIndex].text;
+                        totalHoras = valueTipo*numHoras;
+                        document.getElementById("tipo").innerHTML = text;
+                        document.getElementById("tipo2").innerHTML = text;
+                        document.getElementById("totalHoras").innerHTML =  totalHoras;
+                        mostrarTareas();
+                    }
+                    document.getElementById("numHoras").onchange=function() {
+                        valueTipo = parseFloat(document.getElementById("resHoras").value);
+                        var numHoras = parseFloat(this.value);
+                        var text = document.getElementById("resHoras").options[document.getElementById("resHoras").selectedIndex].text;
+                        totalHoras = valueTipo*numHoras;
+                        document.getElementById("tipo").innerHTML = text;
+                        document.getElementById("totalHoras").innerHTML =  totalHoras;
+                        mostrarTareas();
+                    }
+                }
+                var action = 1;
+
+                function calcularPlan(){
+                    if ( action == 1 ) {
+                        document.getElementById("tareas").style.display = "inline-block";
+                        document.getElementById("btn-plan").style.backgroundColor = "#6610f2";
+                        document.getElementById("btn-plan").innerHTML = "Ocultar plan";
+                        action = 2;
+                    } else {
+                        document.getElementById("tareas").style.display = "none";
+                        document.getElementById("btn-plan").style.backgroundColor = "#23dd6a";
+                        document.getElementById("btn-plan").innerHTML = "Calcular plan";
+                        action = 1;
+                    }
+                    insertarCodigo();
+                }
+
+                
+                var t1 = {nombre:"Proyecto I.S", materia:"Ingeniería de Software", dificultad:9, prioridad: 9, entrega: "30/11/2019"};
+                var t2 = {nombre:"Proyecto Conta", materia:"Contabilidad I", dificultad:6, prioridad: 6, entrega: "28/11/2019"};
+                var t3 = {nombre:"Examen A.S.2", materia:"Álgebra Superior II", dificultad:10, prioridad: 7, entrega: "02/12/2019"};
+                var tareas = [t1,t2,t3];
+                var sumaDificultad = 0;
+
+                for (let i=0; i<tareas.length; i+=1) {
+                    sumaDificultad += tareas[i].dificultad;
+                }  
+
+                function insertarCodigo(){
+                    var h = document.getElementById("lista");
+                    for (let i=0; i<tareas.length; i+=1) {
+                        h.insertAdjacentHTML("beforeend",'<ul class = "listaTarea" id = "tarea '+i+'"><li><strong>Nombre:</strong><span class ="tareas" id="nom'+i+'" > </span></li>' +
+                        '<li><strong>Materia:</strong><span class ="tareas" id="mat'+i+'" ></span></li><li><strong>Tiempo sugerido:</strong>' +
+                        '<strong><span class ="tareas" id="hrs'+i+'" ></span></strong></li></ul>');
+                    }      
+                    mostrarTareas();
+                }  
+                     
+                function mostrarTareas(){
+                    var totalHoras = 0;
+                    var formaCalcular = 1;
+                    var numHoras = 0;
+                    var eNum = document.getElementById("numHoras");
+                    var eRes = document.getElementById("resHoras");
+
+                    numHoras = +eNum.value;
+                    formaCalcular = +eRes.value;
+                    var text = eRes.options[eRes.selectedIndex].text;
+                    totalHoras = formaCalcular * numHoras;
+
+                    for (let i=0; i<tareas.length; i+=1) {
+                        document.getElementById("nom"+i).innerHTML = tareas[i]["nombre"];
+                        document.getElementById("mat"+i).innerHTML = tareas[i]["materia"];
+                        var proporcion = Math.round(tareas[i]["dificultad"]/sumaDificultad*totalHoras *100) / 100 ;
+                        var entero = Math.floor(proporcion);
+                        var decimal = Math.round((proporcion - entero) * 60);
+                        document.getElementById("hrs"+i).innerHTML = Math.round(tareas[i]["dificultad"]/sumaDificultad *100) +"% = "+entero+" horas "+decimal+" minutos";
+                    }
+                }
+                
+                
+    
+            </script> 
     </body>
 </html>
