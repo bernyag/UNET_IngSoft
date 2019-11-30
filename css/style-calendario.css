@@ -338,6 +338,18 @@ input[type=submit]:active{
     padding: 8px 30px;
 }
 
+.tarea{
+    margin-left: 10%;
+}
+
+.listaHeader{
+    font-style: italic; 
+    border-bottom: 1px solid #23dd6a; 
+    width: 80%; 
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
 
 /*Diseño para el calnedrio */
 
@@ -444,7 +456,7 @@ caption {
 .container .agrega-tarea ul li{
     text-align: left;    
     margin-left: 30px;
-    margin-top: 10px;
+    margin-top: 20px;
     
 }
 
@@ -531,7 +543,7 @@ span.psw {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #e8e8e8;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 50%; /* Could be more or less, depending on screen size */
