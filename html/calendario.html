@@ -43,12 +43,14 @@
                     <div>
                         <ul class="listaTareas">
                             <li style="text-align: right" onclick="document.getElementById('id01').style.display='block'" ><span id="lbAgregar">Agregar tarea</span><ion-icon class="btnAgregar" name="add-circle-outline"></ion-icon></li>
-                            <li id="t1">Tarea 1</li>
-                            <li id="t2">Tarea 1</li>
-                            <li id="t3">Tarea 1</li>
-                            <li id="t4">Tarea 1</li>
-                            <li id="t5">Tarea 1</li>
-                            <li id="t6">Tarea 1</li>
+                            <li class="listaHeader">Tareas:</li>
+                            <br>
+                            <li id="t1" class="tarea">No hay tareas pendientes para este dia</li>
+                            <li id="t2" class="tarea"></li>
+                            <li id="t3" class="tarea"></li>
+                            <li id="t4" class="tarea"></li>
+                            <li id="t5" class="tarea"></li>
+                            <li id="t6" class="tarea"></li>
                         </ul>
                     </div>
                 </div>
@@ -147,13 +149,13 @@
                             <div class="row">
                                 <div class="agrega-tarea">
                                     <ul>
-                                        <li>Tarea:
+                                        <li>Nombre:
                                             <input type="text" name="tarea" id="tar" placeholder="Nombre de tarea" required>
                                         </li>
                                         <li>Materia:
                                             <input type="text" name="materia" id="mat" placeholder="Materia" required>
                                         </li>
-                                        <li>Dificultad:
+                                        <li>Dificultad:&nbsp;&nbsp;
                                             <select name="dificultad" id="dif">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -162,7 +164,7 @@
                                                     <option value="5">5</option>
                                                 </select>
                                         </li>
-                                        <li>Prioridad:
+                                        <li>Prioridad:&nbsp;&nbsp;
                                             <select name="prioridad" id="prio">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -171,12 +173,69 @@
                                                     <option value="5">5</option>
                                             </select>
                                         </li>
+                                        <li>Fecha de entrega:</li>
+                                        <br>
+                                        Día: 
+                                        <select name="diaEnt" id="diaEnt">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                        </select>
+                                        &nbsp;&nbsp; Mes: 
+                                        <select id="mesEnt">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        &nbsp;&nbsp; Año:
+                                        <select id="anoEnt">
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                        </select>
                                     </ul>
-                                    <button type="button" onclick="creaCuenta()" id="btn-crear">Crear cuenta</button>
+                                    <button type="button" onclick="agregarTarea()" id="btn-crear">Agregar tarea</button>
                                 </div>
                             </div> 
                         </div>
-                        <div class="pop-footer" style="background-color:#e8e8e8">
+                        <div class="pop-footer" style="background-color:#ccc">
                             <button type="button" onclick="salir()" class="cancelbtn">
                                 Cancel
                             </button>
@@ -226,6 +285,22 @@
             var diatxt = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
             var mestxt = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
             
+            var tareas = new Array(100);
+            tareas.fill('');
+            var totTareas = 6;
+            var t1 = {nombre:"Proyecto I.S", materia:"Ingeniería de Software", dificultad:4, prioridad: 4, entrega: "11/30/2019"};
+            var t2 = {nombre:"Proyecto Conta", materia:"Contabilidad I", dificultad:1, prioridad: 3, entrega: "11/28/2019"};
+            var t3 = {nombre:"Examen A.S.2", materia:"Álgebra Superior II", dificultad:2, prioridad: 5, entrega: "12/02/2019"};
+            var t4 = {nombre:"Ensayo", materia:"Redacción", dificultad:4, prioridad: 4, entrega: "11/30/2019"};
+            var t5 = {nombre:"Parcial", materia:"Cálculo III", dificultad:5, prioridad: 5, entrega: "11/28/2019"};
+            var t6 = {nombre:"Hoja de trabajo", materia:"Álgebra Superior II", dificultad:4, prioridad: 1, entrega: "12/02/2019"};
+            tareas[0]=t1;
+            tareas[1]=t2;
+            tareas[2]=t3;
+            tareas[3]=t4;
+            tareas[4]=t5;
+            tareas[5]=t6;
+            
             var selected = 0;
             var dia = 0;
             var mes = 0;
@@ -241,7 +316,6 @@
                 }
             }
               
-            
             function salir(){
                 
                 modal.style.display = "none";
@@ -249,7 +323,12 @@
                 document.getElementById("mat").value = "";
                 document.getElementById("dif").value = "1";
                 document.getElementById("prio").value = "1"; 
+                document.getElementById("diaEnt").value = "1"; 
+                document.getElementById("mesEnt").value = "1"; 
+                document.getElementById("anoEnt").value = "2019"; 
             }
+            
+            //Métodos y funciones para la fucnionalidad del calendario
             
             function llenaDias(month, year){
                 var d = month + "/1" + "/" + year;
@@ -272,7 +351,6 @@
                 
                 llenaDias(mes+1, ano);
                 fechaTxt(dia, mes+1, ano);
-                //alert(dia +"/"+mes+"/"+ano);
                 
                 var i = 0;
                 while(posiciones[i]!=dia){
@@ -281,18 +359,18 @@
                 document.getElementById(i).classList.add("today");
                 selected = i;
                 
-                
-                }  
+                cargaTareas(mes);
+            }  
             
             function selectDay(id){
                 document.getElementById(selected).classList.remove("today");
                 document.getElementById(id).classList.add("today");
                 selected = id;
                 dia = posiciones[id];
-                //alert(dia);
-                
                 fechaTxt(dia, mes+1, ano);
                 
+                clearList();
+                cargaTareas(mes, dia);
             }
             
             function fechaTxt(s_day, s_month, s_year){  
@@ -327,6 +405,9 @@
                 document.getElementById(selected).classList.remove("today");
                 document.getElementById(j).classList.add("today");
                 selected = j;
+                
+                clearList();
+                cargaTareas(mes,1);
             }
             
             function prevMonth(){
@@ -346,6 +427,75 @@
                 document.getElementById(selected).classList.remove("today");
                 document.getElementById(j).classList.add("today");
                 selected = j;
+                
+                clearList();
+                cargaTareas(mes,1);
+
+            }
+            
+            
+            //Método para funcionalidad de tareas
+            function cargaTareas(thisMonth, thisDay){
+                var id;
+                var fe;
+                var fecha;
+                var mesTar;
+                var diaTar;
+                var idTar = 1;
+                var j;
+                
+                for(var i=0; i<totTareas; i++){
+                    fe = tareas[i].entrega;
+                    fecha = new Date(fe);
+                    mesTar = fecha.getMonth();
+                    diaTar = fecha.getDate();
+                    if(mesTar == mes && diaTar==thisDay){
+                        id="t"+(idTar);
+                        document.getElementById(id).innerHTML = tareas[i].nombre;
+                        idTar++;
+                    } 
+                    
+                    if(mesTar == mes){
+                        j=0;
+                        while(posiciones[j] != diaTar){
+                                j++;
+                        }
+                        document.getElementById(j).innerHTML = "<div class='day'>"+diaTar+"</div><div class='notes'><ion-icon name='logo-ionic'></ion-icon></div>";
+                    }  
+                }
+            }
+            
+            function clearList(){
+                var id;
+                document.getElementById("t1").innerHTML = "No hay tareas para este día";
+                for(var i=2; i<=6; i++){
+                    id = "t"+i;
+                    document.getElementById(id).innerHTML = "";
+                }
+            }
+            
+            //Funcionalidad para agregar tareas
+            
+            function agregarTarea(){
+                var nomTar = document.getElementById("tar").value;
+                var matTar = document.getElementById("mat").value;
+                var dific = document.getElementById("dif").value;
+                var priorid = document.getElementById("prio").value;
+                var dd = document.getElementById("diaEnt").value;
+                var mm = document.getElementById("mesEnt").value;
+                var aa = document.getElementById("anoEnt").value;
+                
+                //alert(nomTar + " "+matTar+" "+dific+" "+priorid+" "+dd+"/"+mm+"/"+aa);
+                
+                var t = {nombre:nomTar, materia:matTar, dificultad: dific, prioridad: priorid, entrega: mm+"/"+dd+"/"+aa};
+
+                tareas[totTareas] = t
+                
+                totTareas ++;
+                cargaTareas(mes,1);
+                
+                salir();
+            
             }
             
         </script>
