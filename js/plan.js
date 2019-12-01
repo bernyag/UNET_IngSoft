@@ -20,12 +20,12 @@ document.getElementById("numHoras").onchange=function() {
     document.getElementById("totalHoras").innerHTML =  totalHoras;
     insertarCodigo();
 }
-var t1 = {nombre:"Proyecto I.S", materia:"Ingeniería de Software", dificultad:4, prioridad: 4, entrega: "30/11/2019"};
-var t2 = {nombre:"Proyecto Conta", materia:"Contabilidad I", dificultad:1, prioridad: 3, entrega: "28/11/2019"};
-var t3 = {nombre:"Examen A.S.2", materia:"Álgebra Superior II", dificultad:2, prioridad: 5, entrega: "02/12/2019"};
-var t4 = {nombre:"Ensayo", materia:"Redacción", dificultad:4, prioridad: 4, entrega: "30/11/2019"};
-var t5 = {nombre:"Parcial", materia:"Cálculo III", dificultad:5, prioridad: 5, entrega: "28/11/2019"};
-var t6 = {nombre:"Hoja de trabajo", materia:"Álgebra Superior II", dificultad:4, prioridad: 1, entrega: "02/12/2019"};
+var t1 = {nombre:"Proyecto I.S", materia:"Ingeniería de Software", dificultad:4, prioridad: 5, entrega: "30/11/2019"};
+var t2 = {nombre:"Proyecto Conta", materia:"Contabilidad I", dificultad:1, prioridad: 4, entrega: "28/11/2019"};
+var t3 = {nombre:"Examen A.S.2", materia:"Álgebra Superior II", dificultad:2, prioridad: 4, entrega: "02/12/2019"};
+var t4 = {nombre:"Ensayo", materia:"Redacción", dificultad:4, prioridad: 3, entrega: "30/11/2019"};
+var t5 = {nombre:"Parcial", materia:"Cálculo III", dificultad:5, prioridad: 3, entrega: "28/11/2019"};
+var t6 = {nombre:"Hoja de trabajo", materia:"Álgebra Superior II", dificultad:4, prioridad: 2, entrega: "02/12/2019"};
 var tareas = [t1,t2,t3,t4,t5,t6];    
 var action = 1;
 
