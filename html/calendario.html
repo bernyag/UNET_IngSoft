@@ -42,10 +42,10 @@
                     </div>
                     <div>
                         <ul class="listaTareas">
-                            <li style="text-align: right" onclick="document.getElementById('id01').style.display='block'" ><span id="lbAgregar">Agregar tarea</span><ion-icon class="btnAgregar" name="add-circle-outline"></ion-icon></li>
+                            <li style="text-align: right" onclick="abrir()" ><span id="lbAgregar">Agregar tarea</span><ion-icon class="btnAgregar" name="add-circle-outline"></ion-icon></li>
                             <li class="listaHeader">Tareas:</li>
                             <br>
-                            <li id="t1" class="tarea">No hay tareas pendientes para este dia</li>
+                            <li id="t1" class="tarea"><p>No hay tareas pendientes para este dia</p></li>
                             <li id="t2" class="tarea"></li>
                             <li id="t3" class="tarea"></li>
                             <li id="t4" class="tarea"></li>
@@ -232,6 +232,8 @@
                                         </select>
                                     </ul>
                                     <button type="button" onclick="agregarTarea()" id="btn-crear">Agregar tarea</button>
+                                    <button type="button" onclick="actualiza()" id="btn-actualiza">Actualiza tarea</button>
+                                    <button type="button" onclick="elimina()" id="btn-elimina">Eliminar tarea</button>
                                 </div>
                             </div> 
                         </div>
@@ -308,6 +310,8 @@
             var mes = 0;
             var ano = 0;
             
+            var indTar=0;
+            
             // Pop-up Agregar tarea
             var modal = document.getElementById('id01');
 
@@ -317,6 +321,16 @@
                     salir();
                 }
             }
+            
+            function abrir(){
+                modal.style.display="block";
+                document.getElementById("diaEnt").value = dia; 
+                document.getElementById("mesEnt").value = mes+1; 
+                document.getElementById("anoEnt").value = ano;
+                document.getElementById("btn-crear").style.display="block";
+                document.getElementById("btn-elimina").style.display="none";
+                document.getElementById("btn-actualiza").style.display="none";
+            }
               
             function salir(){
                 
@@ -324,10 +338,78 @@
                 document.getElementById("tar").value = "";
                 document.getElementById("mat").value = "";
                 document.getElementById("dif").value = "1";
-                document.getElementById("prio").value = "1"; 
-                document.getElementById("diaEnt").value = "1"; 
-                document.getElementById("mesEnt").value = "1"; 
-                document.getElementById("anoEnt").value = "2019"; 
+                document.getElementById("prio").value = "1";  
+            }
+            
+            function editar(ind){
+                modal.style.display="block";
+                
+                document.getElementById("btn-crear").style.display="none";
+                document.getElementById("btn-elimina").style.display="inline-block";
+                document.getElementById("btn-actualiza").style.display="inline-block";
+                
+                document.getElementById("tar").value = tareas[ind].nombre;
+                document.getElementById("mat").value = tareas[ind].materia;
+                document.getElementById("dif").value = tareas[ind].dificultad;
+                document.getElementById("prio").value = tareas[ind].prioridad; 
+                document.getElementById("diaEnt").value = dia; 
+                document.getElementById("mesEnt").value = mes+1; 
+                document.getElementById("anoEnt").value = ano;
+                
+                indTar=ind;
+                
+            }
+            
+            function actualiza(){
+                var nomTar = document.getElementById("tar").value;
+                var matTar = document.getElementById("mat").value;
+                var dific = document.getElementById("dif").value;
+                var priorid = document.getElementById("prio").value;
+                var dd = document.getElementById("diaEnt").value;
+                var mm = document.getElementById("mesEnt").value;
+                var aa = document.getElementById("anoEnt").value;
+                                
+                var t = {nombre:nomTar, materia:matTar, dificultad: dific, prioridad: priorid, entrega: mm+"/"+dd+"/"+aa};
+
+                tareas[indTar] = t;
+                cargaTareas(mes,dia);
+                
+                salir();
+            }
+            
+            function elimina(){
+                for(i=indTar; i<tareas.length; i++){
+                    tareas[i]=tareas[i+1];
+                }
+                tareas[tareas.length] = '';
+                totTareas=totTareas-1;
+                
+                prevMonth();
+                nextMonth();
+                
+                salir();
+            }
+            
+             //Funcionalidad para agregar tareas
+            
+            function agregarTarea(){
+                var nomTar = document.getElementById("tar").value;
+                var matTar = document.getElementById("mat").value;
+                var dific = document.getElementById("dif").value;
+                var priorid = document.getElementById("prio").value;
+                var dd = document.getElementById("diaEnt").value;
+                var mm = document.getElementById("mesEnt").value;
+                var aa = document.getElementById("anoEnt").value;
+                                
+                var t = {nombre:nomTar, materia:matTar, dificultad: dific, prioridad: priorid, entrega: mm+"/"+dd+"/"+aa};
+
+                tareas[totTareas] = t;
+                
+                totTareas ++;
+                cargaTareas(mes,dia);
+                
+                salir();
+            
             }
             
             //Métodos y funciones para la fucnionalidad del calendario
@@ -453,7 +535,8 @@
                     diaTar = fecha.getDate();
                     if(mesTar == mes && diaTar==thisDay){
                         id="t"+(idTar);
-                        document.getElementById(id).innerHTML = tareas[i].nombre;
+                        document.getElementById(id).innerHTML = tareas[i].nombre + 
+                            "<span style = 'font-size: 15px; padding-left:20px; font-style: italic;'>"+tareas[i].materia+"</span><span class='btnInfo' onclick='editar("+i+")'><ion-icon name='information-circle'></ion-icon></span>";
                         idTar++;
                     } 
                     
@@ -476,29 +559,6 @@
                 }
             }
             
-            //Funcionalidad para agregar tareas
-            
-            function agregarTarea(){
-                var nomTar = document.getElementById("tar").value;
-                var matTar = document.getElementById("mat").value;
-                var dific = document.getElementById("dif").value;
-                var priorid = document.getElementById("prio").value;
-                var dd = document.getElementById("diaEnt").value;
-                var mm = document.getElementById("mesEnt").value;
-                var aa = document.getElementById("anoEnt").value;
-                
-                //alert(nomTar + " "+matTar+" "+dific+" "+priorid+" "+dd+"/"+mm+"/"+aa);
-                
-                var t = {nombre:nomTar, materia:matTar, dificultad: dific, prioridad: priorid, entrega: mm+"/"+dd+"/"+aa};
-
-                tareas[totTareas] = t
-                
-                totTareas ++;
-                cargaTareas(mes,1);
-                
-                salir();
-            
-            }
             
         </script>
     

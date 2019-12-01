@@ -329,7 +329,14 @@ input[type=submit]:active{
 .btnAgregar{
     font-size: 150%;
 }
-.btnAgregar:hover{
+
+.btnInfo{
+    padding-left: 30px; 
+    vertical-align: sub;
+    color: #fff;
+}
+.btnAgregar:hover,
+.btnInfo:hover{
     cursor: pointer;
     color: #23dd6a;
 }
@@ -351,11 +358,11 @@ input[type=submit]:active{
 }
 
 
-/*Diseño para el calnedrio */
+/*Diseño para el calendario */
 
 table {
    margin-left: 10%;
-    margin-bottom: 2%;
+   margin-bottom: 2%;
    border: 1px solid #000;
    border-collapse: collapse;
    }
@@ -365,6 +372,8 @@ th {
    font-size: 70%;
    text-transform: uppercase;
     padding: 5px 0;
+    background-color: #fff;
+
 }
 
 td {
@@ -421,7 +430,10 @@ caption {
 }
 
 .weekend {
-   background-color: #eee;
+   background-color: #f0f0f0;
+}
+.weekday{
+    background-color: #fff;
 }
 
 
@@ -475,6 +487,21 @@ caption {
     width: 80%;
     text-align: center;
     margin-left: 10%;
+}
+
+#btn-elimina,
+#btn-actualiza{
+    width: 20%;
+    display: none;
+}
+
+#btn-elimina{
+    background-color: #f44336;
+    margin-left: 10%;
+
+}
+#btn-actualiza{
+    background-color: #23dd6a;    
 }
 
 .icon-cuenta{
