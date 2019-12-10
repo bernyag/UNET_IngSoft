@@ -273,6 +273,7 @@ input[type=submit]:active{
 /* SIGN UP / SIGN IN */
 /* ---------------------------------------------------------------------*/
 
+
 .inicio-sesion{
     max-width: 100%;
     padding: 0 10%;
@@ -351,7 +352,7 @@ input[type=submit]:active{
 }
 .cuenta-box ul li:last-child{
     font-size: 60%;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .cuenta-box a{ margin-left: 20px; }

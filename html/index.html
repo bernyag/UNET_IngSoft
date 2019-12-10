@@ -13,7 +13,7 @@
       
     </head>
     
-    <body onload="iniciaSesion()">
+    <body onload="loadSesion()">
         <header>
             <nav class="sticky">
                 <div class="row">
@@ -23,8 +23,9 @@
                        
                         <li><a href="calendario.html" id="tipo-huesped1">Calendario</a></li>
                         <li><a href="plan.html" id="tipo-huesped2">Plan de horarios</a></li>
-                        <li><a href="miCuenta.html" id="sesion"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi Cuenta</a></li>
+                        <li><a href="#" id="sesion"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi Cuenta</a> </li>
                         <li><a href="index.html" id="default"><ion-icon name="contact" class="icon-nav"></ion-icon>Iniciar Sesion</a></li>
+                        <li><a href="#" id="cerrar" onclick="cierraSesion()" style="color: #ff0000; font-size: 50%;">Cerrar Sesion</a></li>
                     </ul>
                     <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
                 </div>
@@ -46,13 +47,14 @@
                                 </div>
                                 <div>
                                     <ul>
-                                        <li>Correo:<input type="email" name="correo" id="correo" placeholder="nombre@example.com" required></li>
-                                        <li>Contraseña:<input type="password" name="pswd" id="pswd" placeholder="contraseña" required> </li>
+                                        <li>Correo:<input type="email" name="correo" id="correo1" placeholder="nombre@example.com" required></li>
+                                        <li>Contraseña:<input type="password" name="pswd" id="pswd1" placeholder="contraseña" required> </li>
+                                        <li id="errorMsg" style="text-align: center; color: #ff0000; display: none">Error, usuario o contraseña incorrectos.</li>
                                         <li><input type="checkbox" name="recordar" id="recordar" > Recordar contraseña</li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <a href="#" class="btn btn-full">Iniciar sesión</a>
+                                    <a href="#" class="btn btn-full" onclick="iniciaSesion()">Iniciar sesión</a>
                                     <br>
                                     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><span class ="green-text">¿No tienes cuenta? ¡Regístrate ahora!</span></button>
 
@@ -85,13 +87,13 @@
                                                 <br><input type="password" name="confpswd" id="cpswd" placeholder="Contraseña" required> </li>
                                             <li><input type="checkbox" name="recordar" id="recordar"> Acepto terminos y condiciones</li>
                                         </ul>
-                                        <p id="cuenta-creada">¡Cuenta creada con éxito! Ahora inicia sesión con tu cuenta</p>
+                                        <p id="cuenta-creada"></p>
                                         <button type="button" onclick="creaCuenta()" id="btn-crear">Crear cuenta</button>
                                     </div>
                                 </div> 
                             </div>
                             <div class="pop-footer" style="background-color:#e8e8e8">
-                                <button type="button" onclick="document.getElementById('id01').style.display='none'; document.getElementById('cuenta-creada').style.display = 'none'" class="cancelbtn">
+                                <button type="button" onclick="document.getElementById('id01').style.display='none'; document.getElementById('cuenta-creada').innerHTML = ''" class="cancelbtn">
                                     Cancel
                                 </button>
                             </div>
@@ -125,6 +127,11 @@
                 </div>
         </footer>
         <script>
+            
+            var usuario;
+            var contrasena;
+            var sesion = "False";
+            
             // Get the modal
             var modal = document.getElementById('id01');
 
@@ -132,21 +139,72 @@
             window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
-                    document.getElementById("cuenta-creada").style.display = "none";
+                    document.getElementById("cuenta-creada").innerHTML = "";
                 }
             }
 
             function salir(){
-                document.getElementById("cuenta-creada").style.display = "none";
+                document.getElementById("cuenta-creada").innerHTML = "";
                 document.getElementById('id01').style.display='none';
             }
 
             function creaCuenta(){
-                //var tipo = document.getElementById("tipo").value;
-                //sessionStorage.setItem("tipoUsuario",tipo);
-                //alert("¡Cuenta creada con éxito! Ahora inicia sesión con tu nueva cuenta de ");
-                document.getElementById("cuenta-creada").style.display = "block";
-            }              
+                var usr;
+                var contra
+                
+                contra = document.getElementById("pswd").value;
+                usr = document.getElementById("correo").value;
+                
+                if(usr != ""){
+                    document.getElementById("cuenta-creada").innerHTML = "¡Cuenta creada con éxito! Ahora inicia sesión con tu cuenta";
+                    document.getElementById("cuenta-creada").style.display = "block";
+                    document.getElementById("cuenta-creada").style.color = "#000";
+                    usuario = usr;
+                    contrasena = contra;
+
+                }
+                else{
+                    document.getElementById("cuenta-creada").innerHTML = "Error. Llena todos los campos para crear tu cuenta";
+                    document.getElementById("cuenta-creada").style.display = "block";
+                    document.getElementById("cuenta-creada").style.color = "#ff0000";
+                }
+            }
+            
+            function loadSesion(){
+                if (sessionStorage.getItem("cuenta") == "True"){
+                    document.getElementById("sesion").style.display = "block";
+                    document.getElementById("default").style.display = "none";   
+                    document.getElementById("cerrar").style.display = "block";   
+                }
+                else{
+                    document.getElementById("sesion").style.display = "none";
+                    document.getElementById("default").style.display = "block";   
+                    document.getElementById("cerrar").style.display = "none";  
+                }
+            }
+            
+            function iniciaSesion(){
+                var usr;
+                var cont;
+                
+                usr = document.getElementById("correo1").value;
+                cont = document.getElementById("pswd1").value;
+                if( (usr == usuario && cont == contrasena)||(usr=="usuario@itam.mx" && cont =="12345") ) {
+                    sessionStorage.setItem("cuenta", "True");
+                    document.getElementById("errorMsg").style.display="none";
+                    loadSesion();
+                    
+                }
+                else{
+                    document.getElementById("errorMsg").style.display="block";
+                }
+            }
+            
+            function cierraSesion(){
+                sessionStorage.removeItem("cuenta");
+                loadSesion();
+            }
+            
         </script>
     
         <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
