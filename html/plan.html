@@ -11,18 +11,18 @@
         <link rel="icon" type="image/ico" href="html/img/logo-negro.png" />
         <title>UNET Planner</title>
     </head>
-    <body onload="iniciaSesion()">
+    <body onload="loadSesion()">
         <header>
             <nav class="sticky">
                 <div class="row">
-                    <img src="../imgs/logo-black.png" alt="Logo Unet" class="logo-header">
-                    <img src="../imgs/logo-black.png" alt="Logo Unet" class="logo-nav"> 
+                    <a href="index.html"><img src="../imgs/logo-black.png" alt="Logo Unet" class="logo-nav"> </a>
                     
                     <ul class="main-nav js--main-nav" id="default-nav">
                         <li><a href="calendario.html" id="tipo-huesped1">Calendario</a></li>
                         <li><a href="plan.html" id="tipo-huesped2">Plan de horarios</a></li>
-                        <li><a href="miCuenta.html" id="sesion"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi Cuenta</a></li>
+                        <li><a href="#" id="sesion"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi Cuenta</a> </li>
                         <li><a href="index.html" id="default"><ion-icon name="contact" class="icon-nav"></ion-icon>Iniciar Sesion</a></li>
+                        <li><a href="index.html" id="cerrar" onclick="cierraSesion()" style="color: #ff0000; font-size: 50%;">Cerrar Sesion</a></li>
                     </ul>
                     <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
                 </div>

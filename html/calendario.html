@@ -13,7 +13,7 @@
       
     </head>
     
-    <body onload="hoy()">
+    <body onload="hoy(); loadSesion()">
         <header>
             <nav class="sticky">
                 <div class="row">
@@ -22,8 +22,9 @@
                        
                         <li><a href="calendario.html" id="tipo-huesped1">Calendario</a></li>
                         <li><a href="plan.html" id="tipo-huesped2">Plan de horarios</a></li>
-                        <li><a href="miCuenta.html" id="sesion"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi Cuenta</a></li>
+                        <li><a href="#" id="sesion"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi Cuenta</a> </li>
                         <li><a href="index.html" id="default"><ion-icon name="contact" class="icon-nav"></ion-icon>Iniciar Sesion</a></li>
+                        <li><a href="index.html" id="cerrar" onclick="cierraSesion()" style="color: #ff0000; font-size: 50%;">Cerrar Sesion</a></li>
                     </ul>
                     <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
                 </div>
@@ -386,7 +387,6 @@
                 
                 prevMonth();
                 nextMonth();
-                
                 salir();
             }
             
@@ -465,10 +465,9 @@
                     dia = fecha.getDate();
                     mes = fecha.getMonth();
                     ano = fecha.getFullYear();
-
-                    document.getElementById("hoy").innerHTML = diatxt[nomDia] + ", " + dia + " de " + mestxt[mes];
-                    document.getElementById("month").innerHTML = mestxt[mes];
-                    document.getElementById("year").innerHTML = ano;
+                    document.getElementById("hoy").innerHTML = diatxt[nomDia] + ", " + dia + " de " + mestxt[s_month-1];
+                    document.getElementById("month").innerHTML = mestxt[s_month-1];
+                    document.getElementById("year").innerHTML = s_year;
                 }
             }
             
@@ -478,8 +477,12 @@
                     document.getElementById(i).innerHTML = " ";
                 }
                 mes = mes+1;
-                llenaDias(mes+1, ano);
+                if(mes+1 == 13){
+                    mes=0;
+                    ano = ano+1;
+                }
                 fechaTxt(1,mes+1, ano);
+                llenaDias(mes+1, ano);
                 
                 var j = 0;
                 dia = 1;
@@ -500,8 +503,12 @@
                     document.getElementById(i).innerHTML = " ";
                 }
                 mes = mes-1;
-                llenaDias(mes+1, ano);
+                if(mes+1 == 0){
+                    mes = 11; 
+                    ano = ano-1;
+                }
                 fechaTxt(1,mes+1, ano);
+                llenaDias(mes+1, ano);  
                 
                 var j = 0;
                 dia = 1;
@@ -518,7 +525,7 @@
             }
             
             
-            //Método para funcionalidad de tareas
+            //Método para funcionalidad de tareas (Columna izquierda)
             function cargaTareas(thisMonth, thisDay){
                 var id;
                 var fe;
@@ -557,6 +564,24 @@
                     id = "t"+i;
                     document.getElementById(id).innerHTML = "";
                 }
+            }
+            
+            //Funcionalidad para la cuenta/inicio de sesion
+            function loadSesion(){
+                if (sessionStorage.getItem("cuenta") == "True"){
+                    document.getElementById("sesion").style.display = "block";
+                    document.getElementById("default").style.display = "none";   
+                    document.getElementById("cerrar").style.display = "block";   
+                }
+                else{
+                    document.getElementById("sesion").style.display = "none";
+                    document.getElementById("default").style.display = "block";   
+                    document.getElementById("cerrar").style.display = "none";  
+                }
+            }
+            function cierraSesion(){
+                sessionStorage.removeItem("cuenta");
+                loadSesion();
             }
             
             

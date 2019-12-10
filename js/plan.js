@@ -89,3 +89,21 @@ function insertarCodigo(){
         document.getElementById("hrs"+i).innerHTML = Math.round(tareas[i]["dificultad"]/sumaDificultad *100) +"% = "+entero+" horas "+decimal+" minutos";
     }
 }
+
+//Funcionalidad para la cuenta/inicio de sesion
+function loadSesion(){
+    if (sessionStorage.getItem("cuenta") == "True"){
+        document.getElementById("sesion").style.display = "block";
+        document.getElementById("default").style.display = "none";   
+        document.getElementById("cerrar").style.display = "block";   
+    }
+    else{
+        document.getElementById("sesion").style.display = "none";
+        document.getElementById("default").style.display = "block";   
+        document.getElementById("cerrar").style.display = "none";  
+    }
+}
+function cierraSesion(){
+    sessionStorage.removeItem("cuenta");
+    loadSesion();
+}
