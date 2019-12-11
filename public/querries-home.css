@@ -15,7 +15,7 @@
 /* From small tablet to big tablet: from 767px to 1023px*/
 @media only screen and (max-width: 1076px){
     body{ font-size: 18px; }
-    section{ padding 60px 0; }
+    section{ padding: 60px 0; }
     
     .ltexto-largo{
         width: 80%;

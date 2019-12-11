@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/style-calendario.css">
+        <link rel="stylesheet" type="text/css" href="/Grid.css">
+        <link rel="stylesheet" type="text/css" href="/querries-home.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+        <link rel="icon" type="image/ico" href="/logo-negro.png" />
+        
+        <title>UNET Planner</title>
+      
+    </head>
+    
+    <body onload="hoy(); loadSesion()">
+        <header>
+            <nav class="sticky">
+                <div class="row">
+                    <a href="index.html"><img src="/logo-black.png" alt="Logo Unet" class="logo-nav"> </a>
+                    <ul class="main-nav js--main-nav" id="default-nav">
+                       
+                        <li><a href="calendario.html" id="tipo-huesped1">Calendario</a></li>
+                        <li><a href="plan.html" id="tipo-huesped2">Plan de horarios</a></li>
+                        <li><a href="#" id="sesion"><ion-icon name="contact" class="icon-nav"></ion-icon>Mi Cuenta</a> </li>
+                        <li><a href="index.html" id="default"><ion-icon name="contact" class="icon-nav"></ion-icon>Iniciar Sesion</a></li>
+                        <li><a href="index.html" id="cerrar" onclick="cierraSesion()" style="color: #ff0000; font-size: 50%;">Cerrar Sesion</a></li>
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu"></ion-icon></a>
+                </div>
+            </nav>
+        </header>
+            
+        <section>
+            
+<!-- ---------------------------------------------------------- -->
+<!-- COLUMNA IZQUIERDA. DESPLIEGUE DE TAREAS -->
+<!-- ---------------------------------------------------------- -->
+            <div class="row calendario">
+                <div class="leftCol col span-1-of-3">
+                    <div class="thisDay">
+                        <p id="hoy"></p>
+                    </div>
+                    <div>
+                        <ul class="listaTareas">
+                            <li style="text-align: right" onclick="abrir()" ><span id="lbAgregar">Agregar tarea</span><ion-icon class="btnAgregar" name="add-circle-outline"></ion-icon></li>
+                            <li class="listaHeader">Tareas:</li>
+                            <br>
+                            <li id="t1" class="tarea"><p>No hay tareas pendientes para este dia</p></li>
+                            <li id="t2" class="tarea"></li>
+                            <li id="t3" class="tarea"></li>
+                            <li id="t4" class="tarea"></li>
+                            <li id="t5" class="tarea"></li>
+                            <li id="t6" class="tarea"></li>
+                        </ul>
+                    </div>
+                </div>
+<!-- ---------------------------------------------------------- -->
+<!-- CALENDARIO -->
+<!-- ---------------------------------------------------------- -->
+                
+                <div class='rightCol col span-2-of-3 '>
+                 <table>
+                      <caption>
+                          <span onclick="prevMonth()"><ion-icon class="arrowLeft" name="arrow-dropleft"></ion-icon></span>
+                          <span id="month"></span> 
+                          <span id="year" style="padding-left: 50px"></span>
+                          <span onclick="nextMonth()"><ion-icon class="arrowRight" name="arrow-dropright"></ion-icon></span>
+                     </caption>
+
+                      <col class="weekend">
+                      <col class="weekday" span="5">
+                      <col class="weekend">
+                      <thead>
+                        <tr>
+                          <th>Dom</th>
+                          <th>Lun</th>
+                          <th>Mar</th>
+                          <th>Mier</th>
+                          <th>Jue</th>
+                          <th>Vie</th>
+                          <th>Sab</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td id="0" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="1" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="2" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="3" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="4" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="5" onclick="selectDay(this.id)"><div class="day"></div>
+                              <div class="notes"><ion-icon name="logo-ionic"></ion-icon></div></td>
+                          <td id="6" onclick="selectDay(this.id)"><div class="day"></div></td>
+                        </tr>
+                        <tr>
+                          <td id="7" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="8" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="9" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="10" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="11" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="12" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="13" onclick="selectDay(this.id)"><div class="day"></div></td>
+                        </tr>
+                        <tr>
+                          <td id="14" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="15" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="16" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="17" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="18" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="19" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="20" onclick="selectDay(this.id)"><div class="day"></div></td>
+                        </tr>
+                        <tr>
+                          <td id="21" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="22" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="23" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="24" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="25" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="26" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="27" onclick="selectDay(this.id)"><div class="day"></div></td>
+                        </tr>
+                        <tr>
+                          <td id="28" onclick="selectDay(this.id)"><div class="day"></div></td>
+                          <td id="29" onclick="selectDay(this.id)"><div class="day"></div>
+                              <div class="notes"><ion-icon name="logo-ionic"></ion-icon></div>
+                          </td>
+                          <td id="30" onclick="selectDay(this.id)"></td>
+                          <td id="31" onclick="selectDay(this.id)"></td>
+                          <td id="32" onclick="selectDay(this.id)"></td>
+                          <td id="33" onclick="selectDay(this.id)"></td>
+                          <td id="34" onclick="selectDay(this.id)"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                
+<!-- ---------------------------------------------------------- -->
+<!-- POP-UP AGREGAR TAREAS -->
+<!-- ---------------------------------------------------------- -->
+                
+                <div id="id01" class="modal">
+                    <form class="modal-content animate" action="/action_page.php">
+                        <div class="imgcontainer">
+                            <span onclick="salir()" class="close" title="Close Modal">&times;</span>
+                        <h3>Agrega una tarea</h3>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="agrega-tarea">
+                                    <ul>
+                                        <li>Nombre:
+                                            <input type="text" name="tarea" id="tar" placeholder="Nombre de tarea" required>
+                                        </li>
+                                        <li>Materia:
+                                            <input type="text" name="materia" id="mat" placeholder="Materia" required>
+                                        </li>
+                                        <li>Dificultad:&nbsp;&nbsp;
+                                            <select name="dificultad" id="dif">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                        </li>
+                                        <li>Prioridad:&nbsp;&nbsp;
+                                            <select name="prioridad" id="prio">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                            </select>
+                                        </li>
+                                        <li>Fecha de entrega:</li>
+                                        <br>
+                                        Día: 
+                                        <select name="diaEnt" id="diaEnt">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                        </select>
+                                        &nbsp;&nbsp; Mes: 
+                                        <select id="mesEnt">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                        &nbsp;&nbsp; Año:
+                                        <select id="anoEnt">
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                        </select>
+                                    </ul>
+                                    <button type="button" onclick="agregarTarea()" id="btn-crear">Agregar tarea</button>
+                                    <button type="button" onclick="actualiza()" id="btn-actualiza">Actualiza tarea</button>
+                                    <button type="button" onclick="elimina()" id="btn-elimina">Eliminar tarea</button>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="pop-footer" style="background-color:#ccc">
+                            <button type="button" onclick="salir()" class="cancelbtn">
+                                Salir
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+                 
+        </section>  
+        
+<!-- ---------------------------------------------------------- -->
+<!-- FOOTER -->
+<!-- ---------------------------------------------------------- -->
+        
+        <footer>
+                <div class="row">
+                    <div class=" col span-1-of-2">
+                        <ul class="footer-nav">
+                            <li><a href="http://unetapp.com/" target="_blank" >About us</a></li>
+                            <li><a href="https://apps.apple.com/mx/app/unet/id1461708771" target="_blank">App Store</a></li>
+                            <li><a href="https://play.google.com/store/apps/details?id=com.unetapp" target="_blank">Play Store</a></li>
+                        </ul>
+                    </div>
+                    <div class=" col span-1-of-2">
+                        <ul class="social-links">
+                            <li><a href="https://www.facebook.com/unetapp" target="_blank"><ion-icon name="logo-facebook" class="facebook-logo"></ion-icon></a></li>
+                            <li><a href="#" target="_blank"><ion-icon name="logo-twitter" class="twitter-logo"></ion-icon></a></li>
+                            <li><a href="#" target="_blank"><ion-icon name="logo-googleplus" class="googleplus-logo"></ion-icon></a></li>
+                            <li><a href="https://www.instagram.com/unetapp/" target="_blank"><ion-icon name="logo-instagram" class="instagram-logo"></ion-icon></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>
+                        Copyright &copy; 2019 by Unet. All rights reserved.
+                    </p>
+                </div>
+        </footer>
+        
+<!-- ---------------------------------------------------------- -->
+<!-- JAVASCRIPT -->
+<!-- ---------------------------------------------------------- -->
+        <script>
+            //Variables globales
+            var posiciones = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+            var diatxt = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            var mestxt = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+            
+            var tareas = new Array(100);
+            tareas.fill('');
+            var totTareas = 6;
+           
+            var t1 = {nombre:"Proyecto I.S", materia:"Ingeniería de Software", dificultad:4, prioridad: 5, entrega: "12/11/2019"};
+            var t2 = {nombre:"Proyecto Conta", materia:"Contabilidad I", dificultad:1, prioridad: 4, entrega: "12/04/2019"};
+            var t3 = {nombre:"Examen A.S.2", materia:"Álgebra Superior II", dificultad:2, prioridad: 4, entrega: "12/9/2019"};
+            var t4 = {nombre:"Ensayo", materia:"Redacción", dificultad:4, prioridad: 3, entrega: "12/20/2019"};
+            var t5 = {nombre:"Parcial", materia:"Cálculo III", dificultad:5, prioridad: 3, entrega: "12/05/2019"};
+            var t6 = {nombre:"Hoja de trabajo", materia:"Álgebra Superior II", dificultad:4, prioridad: 2, entrega: "12/14/2019"};
+
+            tareas[0]=t1;
+            tareas[1]=t2;
+            tareas[2]=t3;
+            tareas[3]=t4;
+            tareas[4]=t5;
+            tareas[5]=t6;
+            
+            var selected = 0;
+            var dia = 0;
+            var mes = 0;
+            var ano = 0;
+            
+            var indTar=0;
+            
+            // Pop-up Agregar tarea
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    salir();
+                }
+            }
+            
+            function abrir(){
+                modal.style.display="block";
+                document.getElementById("diaEnt").value = dia; 
+                document.getElementById("mesEnt").value = mes+1; 
+                document.getElementById("anoEnt").value = ano;
+                document.getElementById("btn-crear").style.display="block";
+                document.getElementById("btn-elimina").style.display="none";
+                document.getElementById("btn-actualiza").style.display="none";
+            }
+              
+            function salir(){
+                
+                modal.style.display = "none";
+                document.getElementById("tar").value = "";
+                document.getElementById("mat").value = "";
+                document.getElementById("dif").value = "1";
+                document.getElementById("prio").value = "1";  
+            }
+            
+            function editar(ind){
+                modal.style.display="block";
+                
+                document.getElementById("btn-crear").style.display="none";
+                document.getElementById("btn-elimina").style.display="inline-block";
+                document.getElementById("btn-actualiza").style.display="inline-block";
+                
+                document.getElementById("tar").value = tareas[ind].nombre;
+                document.getElementById("mat").value = tareas[ind].materia;
+                document.getElementById("dif").value = tareas[ind].dificultad;
+                document.getElementById("prio").value = tareas[ind].prioridad; 
+                document.getElementById("diaEnt").value = dia; 
+                document.getElementById("mesEnt").value = mes+1; 
+                document.getElementById("anoEnt").value = ano;
+                
+                indTar=ind;
+                
+            }
+            
+            function actualiza(){
+                var nomTar = document.getElementById("tar").value;
+                var matTar = document.getElementById("mat").value;
+                var dific = document.getElementById("dif").value;
+                var priorid = document.getElementById("prio").value;
+                var dd = document.getElementById("diaEnt").value;
+                var mm = document.getElementById("mesEnt").value;
+                var aa = document.getElementById("anoEnt").value;
+                                
+                var t = {nombre:nomTar, materia:matTar, dificultad: dific, prioridad: priorid, entrega: mm+"/"+dd+"/"+aa};
+
+                tareas[indTar] = t;
+                cargaTareas(mes,dia);
+                
+                salir();
+            }
+            
+            function elimina(){
+                for(i=indTar; i<tareas.length; i++){
+                    tareas[i]=tareas[i+1];
+                }
+                tareas[tareas.length] = '';
+                totTareas=totTareas-1;
+                
+                prevMonth();
+                nextMonth();
+                salir();
+            }
+            
+             //Funcionalidad para agregar tareas
+            
+            function agregarTarea(){
+                var nomTar = document.getElementById("tar").value;
+                var matTar = document.getElementById("mat").value;
+                var dific = document.getElementById("dif").value;
+                var priorid = document.getElementById("prio").value;
+                var dd = document.getElementById("diaEnt").value;
+                var mm = document.getElementById("mesEnt").value;
+                var aa = document.getElementById("anoEnt").value;
+                                
+                var t = {nombre:nomTar, materia:matTar, dificultad: dific, prioridad: priorid, entrega: mm+"/"+dd+"/"+aa};
+
+                tareas[totTareas] = t;
+                
+                totTareas ++;
+                cargaTareas(mes,dia);
+                
+                salir();
+            
+            }
+            
+            //Métodos y funciones para la fucnionalidad del calendario
+            
+            function llenaDias(month, year){
+                var d = month + "/1" + "/" + year;
+                var date = new Date(d);
+                var weekDay = date.getDay();
+                var ind = weekDay; 
+                
+                for(i = 0; i<30; i++){
+                    document.getElementById(ind).innerHTML = "<div class='day'>"+(i+1)+"</div>";
+                    posiciones[ind]=i+1;
+                    ind = ind +1;
+                }
+            }
+            
+            function hoy(){
+                var fecha = new Date();
+                dia = fecha.getDate();
+                mes = fecha.getMonth();
+                ano = fecha.getFullYear();
+                
+                llenaDias(mes+1, ano);
+                fechaTxt(dia, mes+1, ano);
+                
+                var i = 0;
+                while(posiciones[i]!=dia){
+                    i++;
+                }
+                document.getElementById(i).classList.add("today");
+                selected = i;
+                
+                cargaTareas(mes);
+            }  
+            
+            function selectDay(id){
+                document.getElementById(selected).classList.remove("today");
+                document.getElementById(id).classList.add("today");
+                selected = id;
+                dia = posiciones[id];
+                fechaTxt(dia, mes+1, ano);
+                
+                clearList();
+                cargaTareas(mes, dia);
+            }
+            
+            function fechaTxt(s_day, s_month, s_year){  
+                if (s_day!=-1){
+                    var d = s_month + "/" + s_day + "/" + s_year;
+                    var fecha = new Date(d);
+                    var nomDia = fecha.getDay();
+                    dia = fecha.getDate();
+                    mes = fecha.getMonth();
+                    ano = fecha.getFullYear();
+                    document.getElementById("hoy").innerHTML = diatxt[nomDia] + ", " + dia + " de " + mestxt[s_month-1];
+                    document.getElementById("month").innerHTML = mestxt[s_month-1];
+                    document.getElementById("year").innerHTML = s_year;
+                }
+            }
+            
+            function nextMonth(){
+                for(var i=0; i<35; i++){
+                    posiciones[i]=-1;
+                    document.getElementById(i).innerHTML = " ";
+                }
+                mes = mes+1;
+                if(mes+1 == 13){
+                    mes=0;
+                    ano = ano+1;
+                }
+                fechaTxt(1,mes+1, ano);
+                llenaDias(mes+1, ano);
+                
+                var j = 0;
+                dia = 1;
+                while(posiciones[j]!=dia){
+                    j++;
+                }
+                document.getElementById(selected).classList.remove("today");
+                document.getElementById(j).classList.add("today");
+                selected = j;
+                
+                clearList();
+                cargaTareas(mes,1);
+            }
+            
+            function prevMonth(){
+                for(var i=0; i<35; i++){
+                    posiciones[i]=-1;
+                    document.getElementById(i).innerHTML = " ";
+                }
+                mes = mes-1;
+                if(mes+1 == 0){
+                    mes = 11; 
+                    ano = ano-1;
+                }
+                fechaTxt(1,mes+1, ano);
+                llenaDias(mes+1, ano);  
+                
+                var j = 0;
+                dia = 1;
+                while(posiciones[j]!=dia){
+                    j++;
+                }
+                document.getElementById(selected).classList.remove("today");
+                document.getElementById(j).classList.add("today");
+                selected = j;
+                
+                clearList();
+                cargaTareas(mes,1);
+
+            }
+            
+            
+            //Método para funcionalidad de tareas (Columna izquierda)
+            function cargaTareas(thisMonth, thisDay){
+                var id;
+                var fe;
+                var fecha;
+                var mesTar;
+                var diaTar;
+                var idTar = 1;
+                var j;
+                
+                for(var i=0; i<totTareas; i++){
+                    fe = tareas[i].entrega;
+                    fecha = new Date(fe);
+                    mesTar = fecha.getMonth();
+                    diaTar = fecha.getDate();
+                    if(mesTar == mes && diaTar==thisDay){
+                        id="t"+(idTar);
+                        document.getElementById(id).innerHTML = tareas[i].nombre + 
+                            "<span style = 'font-size: 15px; padding-left:20px; font-style: italic;'>"+tareas[i].materia+"</span><span class='btnInfo' onclick='editar("+i+")'><ion-icon name='information-circle'></ion-icon></span>";
+                        idTar++;
+                    } 
+                    
+                    if(mesTar == mes){
+                        j=0;
+                        while(posiciones[j] != diaTar){
+                                j++;
+                        }
+                        document.getElementById(j).innerHTML = "<div class='day'>"+diaTar+"</div><div class='notes'><ion-icon name='logo-ionic'></ion-icon></div>";
+                    }  
+                }
+            }
+            
+            function clearList(){
+                var id;
+                document.getElementById("t1").innerHTML = "No hay tareas para este día";
+                for(var i=2; i<=6; i++){
+                    id = "t"+i;
+                    document.getElementById(id).innerHTML = "";
+                }
+            }
+            
+            //Funcionalidad para la cuenta/inicio de sesion
+            function loadSesion(){
+                if (sessionStorage.getItem("cuenta") == "True"){
+                    document.getElementById("sesion").style.display = "block";
+                    document.getElementById("default").style.display = "none";   
+                    document.getElementById("cerrar").style.display = "block";   
+                }
+                else{
+                    document.getElementById("sesion").style.display = "none";
+                    document.getElementById("default").style.display = "block";   
+                    document.getElementById("cerrar").style.display = "none";  
+                }
+            }
+            function cierraSesion(){
+                sessionStorage.removeItem("cuenta");
+                loadSesion();
+            }
+            
+            
+        </script>
+    
+        <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/script-home.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        
+        
+        <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
+        
+        
+        <script src="/index.js"></script>  
+    </body>
+</html>

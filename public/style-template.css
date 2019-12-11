@@ -20,27 +20,11 @@ body{
 }
 
 /* ---------------------------------------------------------------------*/
-/*  FUNCIONALIDAD SESSION */
-/* ---------------------------------------------------------------------*/
-
-#tipo-huesped{
-    display: none;
-}
-
-#tipo-anfitrion{
-    display: none;
-}
-
-#sesion{
-    font-size: 50%;
-}
-
-
-/* ---------------------------------------------------------------------*/
 /* GENERALES */
 /* ---------------------------------------------------------------------*/
 
 .row{
+    max-width: 1140px;
     margin: 0 auto;
     
 }
@@ -99,7 +83,21 @@ h3{
 
 /* ------LINKS-----*/
 
+a:link,
+a:visited{
+    color: #669999;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #669999;
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
+    transition: border-bottom 0.2s, color 0.2s;
+}
 
+a:hover,
+a:active{
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
 
 /* ------BUTTONS-----*/
 .btn:link, 
@@ -195,7 +193,9 @@ input[type=submit]:active{
     font-size: 350%; 
     display: inline-block;
 }
-
+.main-nav li:last-child{
+    font-size: 50%;
+}
 
 .main-nav li a:link,
 .main-nav li a:visited {
@@ -257,60 +257,15 @@ input[type=submit]:active{
 /* SECCION */
 /* ---------------------------------------------------------------------*/
 
-.info h2{
-    margin-top: 50px;
+.quienes-somos{
+    margin-top: 20px;
 }
 
-.profile-pic{
-    height: 200px;
-    width: auto;
-}
+.texto-largo{
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
 
-.info .btn,
-.btn-cerrar{
-    display: inline-block;
-    padding: 10px 10px;
-    margin: 20px 0;
-    border-radius: 30px;
-    color: #fff;
-    background-color: #669999;
-    font-size: 80%;
-    cursor: pointer;
-}
-
-.info .btn:hover{
-    background-color: #548181;
-}
-
-.btn-cerrar{
-    background-color: #ef5757;
-    margin-left: 50%;
-}
-
-.btn-cerrar:hover{
-    background-color: #e04747;
-}
-
-.datos-cuenta .row{
-    margin-bottom: 50px;
-}
-
-.labels{
-    float: left;
-    width: 200px;
-}
-.labels label{
-    display: block;
-    margin-bottom: 10px;
-}
-
-.datos{
-    float: left;
-    margin-left: 2%;
-}
-.datos p,
-.datos strong{
-    margin-bottom: 10px;
 }
 
 
@@ -396,3 +351,6 @@ footer p{
     text-align: center;
     margin-top: 20px;
 }
+
+
+
