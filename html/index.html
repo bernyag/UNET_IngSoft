@@ -138,33 +138,54 @@
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == modal) {
-                    modal.style.display = "none";
-                    document.getElementById("cuenta-creada").innerHTML = "";
+                    salir();
                 }
             }
 
             function salir(){
                 document.getElementById("cuenta-creada").innerHTML = "";
-                document.getElementById('id01').style.display='none';
+                modal.style.display='none';
+                document.getElementById("pswd").value = "";
+                document.getElementById("correo").value = "";
+                document.getElementById("nom").value = "";
+                document.getElementById("cpswd").value = "";
             }
 
             function creaCuenta(){
                 var usr;
-                var contra
+                var contra;
+                var corr;
+                var conf;
+                var longitud;
                 
                 contra = document.getElementById("pswd").value;
-                usr = document.getElementById("correo").value;
+                corr = document.getElementById("correo").value;
+                usr = document.getElementById("nom").value;
+                conf = document.getElementById("cpswd").value;
+                longitud = contra.length; 
                 
-                if(usr != ""){
+                if(usr != "" && corr!="" && contra !="" && conf==contra && longitud>=8){
                     document.getElementById("cuenta-creada").innerHTML = "¡Cuenta creada con éxito! Ahora inicia sesión con tu cuenta";
                     document.getElementById("cuenta-creada").style.display = "block";
                     document.getElementById("cuenta-creada").style.color = "#000";
                     usuario = usr;
                     contrasena = contra;
+                    
 
                 }
                 else{
-                    document.getElementById("cuenta-creada").innerHTML = "Error. Llena todos los campos para crear tu cuenta";
+                    if(usr == "" && corr==""){
+                        document.getElementById("cuenta-creada").innerHTML = "Error. Llena todos los campos para crear tu cuenta";
+                    }
+                    else{
+                        if(longitud<8){
+                            document.getElementById("cuenta-creada").innerHTML = "Error. La contraseña debe tener al menos 8 caracteres";
+                        }
+                        else{
+                            document.getElementById("cuenta-creada").innerHTML = "Error. Las contraseñas no coinciden";
+                        }
+                    }
+                    
                     document.getElementById("cuenta-creada").style.display = "block";
                     document.getElementById("cuenta-creada").style.color = "#ff0000";
                 }

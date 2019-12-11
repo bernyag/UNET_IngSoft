@@ -324,13 +324,18 @@
             }
             
             function abrir(){
-                modal.style.display="block";
-                document.getElementById("diaEnt").value = dia; 
-                document.getElementById("mesEnt").value = mes+1; 
-                document.getElementById("anoEnt").value = ano;
-                document.getElementById("btn-crear").style.display="block";
-                document.getElementById("btn-elimina").style.display="none";
-                document.getElementById("btn-actualiza").style.display="none";
+                if (sessionStorage.getItem("cuenta") == "True"){
+                    modal.style.display="block";
+                    document.getElementById("diaEnt").value = dia; 
+                    document.getElementById("mesEnt").value = mes+1; 
+                    document.getElementById("anoEnt").value = ano;
+                    document.getElementById("btn-crear").style.display="block";
+                    document.getElementById("btn-elimina").style.display="none";
+                    document.getElementById("btn-actualiza").style.display="none";   
+                }
+                else{
+                    alert("Debes iniciar sesion para poder cargar y guardar tus tareas")
+                }
             }
               
             function salir(){
@@ -375,10 +380,21 @@
                 tareas[indTar] = t;
                 cargaTareas(mes,dia);
                 
+                dd = dia;
+                prevMonth();
+                nextMonth();
+                
+                var i = 0;
+                while(posiciones[i]!=dd){
+                    i++;
+                }
+                selectDay(i);
                 salir();
             }
             
             function elimina(){
+                var dd = document.getElementById("diaEnt").value;
+                
                 for(i=indTar; i<tareas.length; i++){
                     tareas[i]=tareas[i+1];
                 }
@@ -387,6 +403,11 @@
                 
                 prevMonth();
                 nextMonth();
+                var j = 0;
+                while(posiciones[j]!=dd){
+                    j++;
+                }
+                selectDay(j);
                 salir();
             }
             
@@ -440,10 +461,9 @@
                 while(posiciones[i]!=dia){
                     i++;
                 }
-                document.getElementById(i).classList.add("today");
-                selected = i;
                 
                 cargaTareas(mes);
+                selectDay(i);
             }  
             
             function selectDay(id){
@@ -527,33 +547,35 @@
             
             //Método para funcionalidad de tareas (Columna izquierda)
             function cargaTareas(thisMonth, thisDay){
-                var id;
-                var fe;
-                var fecha;
-                var mesTar;
-                var diaTar;
-                var idTar = 1;
-                var j;
-                
-                for(var i=0; i<totTareas; i++){
-                    fe = tareas[i].entrega;
-                    fecha = new Date(fe);
-                    mesTar = fecha.getMonth();
-                    diaTar = fecha.getDate();
-                    if(mesTar == mes && diaTar==thisDay){
-                        id="t"+(idTar);
-                        document.getElementById(id).innerHTML = tareas[i].nombre + 
-                            "<span style = 'font-size: 15px; padding-left:20px; font-style: italic;'>"+tareas[i].materia+"</span><span class='btnInfo' onclick='editar("+i+")'><ion-icon name='information-circle'></ion-icon></span>";
-                        idTar++;
-                    } 
-                    
-                    if(mesTar == mes){
-                        j=0;
-                        while(posiciones[j] != diaTar){
-                                j++;
-                        }
-                        document.getElementById(j).innerHTML = "<div class='day'>"+diaTar+"</div><div class='notes'><ion-icon name='logo-ionic'></ion-icon></div>";
-                    }  
+                if (sessionStorage.getItem("cuenta") == "True"){
+                    var id;
+                    var fe;
+                    var fecha;
+                    var mesTar;
+                    var diaTar;
+                    var idTar = 1;
+                    var j;
+
+                    for(var i=0; i<totTareas; i++){
+                        fe = tareas[i].entrega;
+                        fecha = new Date(fe);
+                        mesTar = fecha.getMonth();
+                        diaTar = fecha.getDate();
+                        if(mesTar == mes && diaTar==thisDay){
+                            id="t"+(idTar);
+                            document.getElementById(id).innerHTML = tareas[i].nombre + 
+                                "<span style = 'font-size: 15px; padding-left:20px; font-style: italic;'>"+tareas[i].materia+"</span><span class='btnInfo' onclick='editar("+i+")'><ion-icon name='information-circle'></ion-icon></span>";
+                            idTar++;
+                        } 
+
+                        if(mesTar == mes){
+                            j=0;
+                            while(posiciones[j] != diaTar){
+                                    j++;
+                            }
+                            document.getElementById(j).innerHTML = "<div class='day'>"+diaTar+"</div><div class='notes'><ion-icon name='logo-ionic'></ion-icon></div>";
+                        }  
+                    }
                 }
             }
             
