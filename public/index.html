@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/style-index.css">
-        <link rel="stylesheet" type="text/css" href="/Grid.css">
-        <link rel="stylesheet" type="text/css" href="/querries-home.css">
+        <link rel="stylesheet" type="text/css" href="../css/style-index.css">
+        <link rel="stylesheet" type="text/css" href="../css/Grid.css">
+        <link rel="stylesheet" type="text/css" href="../css/querries-home.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
-        <link rel="icon" type="image/ico" href="/logo-negro.png" />
+        <link rel="icon" type="image/ico" href="html/img/logo-negro.png" />
         
         <title>UNET Planner</title>
       
@@ -17,7 +17,7 @@
         <header>
             <nav class="sticky">
                 <div class="row">
-                    <a href="index.html"><img src="/logo-black.png" alt="Logo Unet" class="logo-nav"> </a>
+                    <a href="index.html"><img src="../imgs/logo-black.png" alt="Logo Unet" class="logo-nav"> </a>
                     
                     <ul class="main-nav js--main-nav" id="default-nav">
                        
@@ -37,7 +37,7 @@
                 <div class="row" style="background-color: #6610f2; max-width: 100%; color:#fff">
                     <h2>¡Organízate y sácale el máximo provecho a tus estudios!</h2>
                 </div>
-                <div class="row inicio-sesion max-width" style="max-width: 100%;">
+                <div class="row inicio-sesion">
                     <div class="col span-1-of-2" >
                         <div class="col span-1-of-1">
                             <div class="cuenta-box">
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="/hero-image.png" alt="Imagen" class="img-index">
+                        <img src="../imgs/hero-image.png" alt="Imagen" class="img-index">
                     </div>
                     <div id="id01" class="modal">
 
@@ -138,33 +138,54 @@
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == modal) {
-                    modal.style.display = "none";
-                    document.getElementById("cuenta-creada").innerHTML = "";
+                    salir();
                 }
             }
 
             function salir(){
                 document.getElementById("cuenta-creada").innerHTML = "";
-                document.getElementById('id01').style.display='none';
+                modal.style.display='none';
+                document.getElementById("pswd").value = "";
+                document.getElementById("correo").value = "";
+                document.getElementById("nom").value = "";
+                document.getElementById("cpswd").value = "";
             }
 
             function creaCuenta(){
                 var usr;
-                var contra
+                var contra;
+                var corr;
+                var conf;
+                var longitud;
                 
                 contra = document.getElementById("pswd").value;
-                usr = document.getElementById("correo").value;
+                corr = document.getElementById("correo").value;
+                usr = document.getElementById("nom").value;
+                conf = document.getElementById("cpswd").value;
+                longitud = contra.length; 
                 
-                if(usr != ""){
+                if(usr != "" && corr!="" && contra !="" && conf==contra && longitud>=8){
                     document.getElementById("cuenta-creada").innerHTML = "¡Cuenta creada con éxito! Ahora inicia sesión con tu cuenta";
                     document.getElementById("cuenta-creada").style.display = "block";
                     document.getElementById("cuenta-creada").style.color = "#000";
                     usuario = usr;
                     contrasena = contra;
+                    
 
                 }
                 else{
-                    document.getElementById("cuenta-creada").innerHTML = "Error. Llena todos los campos para crear tu cuenta";
+                    if(usr == "" && corr==""){
+                        document.getElementById("cuenta-creada").innerHTML = "Error. Llena todos los campos para crear tu cuenta";
+                    }
+                    else{
+                        if(longitud<8){
+                            document.getElementById("cuenta-creada").innerHTML = "Error. La contraseña debe tener al menos 8 caracteres";
+                        }
+                        else{
+                            document.getElementById("cuenta-creada").innerHTML = "Error. Las contraseñas no coinciden";
+                        }
+                    }
+                    
                     document.getElementById("cuenta-creada").style.display = "block";
                     document.getElementById("cuenta-creada").style.color = "#ff0000";
                 }
@@ -215,6 +236,20 @@
         
         <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
         
-        <script src="/index.js"></script>  
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyDxj5n4LrbLCQe8rS8-emVvefwrgy2VxXM",
+            authDomain: "myhaus-itam.firebaseapp.com",
+            databaseURL: "https://myhaus-itam.firebaseio.com",
+            projectId: "myhaus-itam",
+            storageBucket: "myhaus-itam.appspot.com",
+            messagingSenderId: "912191210053",
+            appId: "1:912191210053:web:79f1f543cf4f0b00"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src="../js/index.js"></script>  
     </body>
 </html>
